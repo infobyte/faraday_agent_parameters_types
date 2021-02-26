@@ -1,0 +1,13 @@
+{
+  "arguments": {
+    "TARGET_URLS": true,
+    "TARGET_PORT": false
+  },
+  "environment_variables": [
+
+  ],
+  "check_cmds": [
+    "tool -v"
+  ],
+  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+}

@@ -1,0 +1,13 @@
+{
+  "arguments": {
+    "TARGET_URL":  {"mandatory": true, "type": "string"},
+    "TARGET_PORT":  {"mandatory": true, "type": "integer"}
+  },
+  "environment_variables": [
+
+  ],
+  "check_cmds": [
+    "tool -v"
+  ],
+  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+}
