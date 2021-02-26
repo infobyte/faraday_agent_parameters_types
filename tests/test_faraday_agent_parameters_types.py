@@ -35,9 +35,32 @@ def test_is_number(manifests):
                 assert FaradayInteger(value)
 
 
+########################
 
 
+indentify_dict = [
+    {"obj": {"type": "integer"}, "class": Integer()},
+    {"obj": {"type": "string"}, "class": String()},
+    {"obj": {"type": "boolean"}, "class": Boolean()},
+    {"obj": {"type": "list", "of": {"type": "boolean"}}, "class": List(Boolean())},
+    {"obj": {"type": "or", "of": ({"type": "boolean"}, {"type": "string"})}, "class": Or(Boolean(), String())},
+    {"obj": {"type": "list", "of": {"type": "or", "of": ({"type": "boolean"}, {"type": "string"})}},
+     "class": List(Or(Boolean(), String()))},
+]
 
 
+@pytest.mark.parametrize("case", indentify_dict)
+def test_indentify_type(case):
+    # In base of obj, it should recognize the class
+    assert indentify(case["obj"]) == case["class"]
 
 
+@pytest.mark.parametrize("case", indentify_dict)
+def test_to_object(case):
+    assert case['class'].to_obj() == case["obj"]
+
+
+# Here goes an import, or an example list
+@pytest.mark.parametrize("field", [])
+def test_serializar_deserialize(field_class, value):
+    assert field.deserialize(field(value).serialize()) == value
