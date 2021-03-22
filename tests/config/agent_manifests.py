@@ -1,7 +1,21 @@
 from pathlib import Path
 import os
 import json
+from faraday_agent_parameters_types.custom_types \
+    import faraday_integer, faraday_string, faraday_boolean, faraday_list
+
 DATA_FOLDER = Path(__file__).parent.parent / "data"
+
+DATA_TYPE = {
+    "integer": faraday_integer.FaradayIntegerSchema(),
+    "string": faraday_string.FaradayStringSchema(),
+    "boolean": faraday_boolean.FaradayBooleanSchema(),
+    "list": faraday_list.FaradayListSchema()
+}
+
+
+def indentify(obj):
+    return type(DATA_TYPE[obj['type']])
 
 
 def generate_manifests():
