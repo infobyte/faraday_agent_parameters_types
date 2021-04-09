@@ -36,7 +36,9 @@ field_dict = [
     {"obj": {"type": "list", "composed": (int, str)}, "class": faraday_list.FaradayListSchema(),
      "fields": {"data": {'items': [1, "test_data"]}, "value": {'items': [1, "test_data"]}}, },
     {"obj": {"type": "range"}, "class": faraday_int_range.FaradayRangeSchema(),
-         "fields": {"data": {'str_range': "1-3"}, "value": {'int_range': [1, 2, 3], 'str_range': "1-3"}}, },
+     "fields": {"data": {'int_range': "1-4"}, "value": {'int_range': [1, 2, 3, 4]}}, },
+    {"obj": {"type": "range"}, "class": faraday_int_range.FaradayRangeSchema(),
+     "fields": {"data": {'int_range': [4, 5, 6, 7]}, "value": {'int_range': [4, 5, 6, 7]}}, },
 ]
 
 
