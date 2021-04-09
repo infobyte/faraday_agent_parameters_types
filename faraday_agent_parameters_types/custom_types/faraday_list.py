@@ -1,5 +1,5 @@
 from ..faraday_agent_parameters_types import Type, TypeSchema
-from marshmallow import fields
+from marshmallow import fields, ValidationError, validates
 
 NAME_TYPE_CLASS = "list"
 
@@ -16,6 +16,13 @@ class FaradayList(Type):
         return NAME_TYPE_CLASS
 
 
-class FaradayIntegerSchema(TypeSchema):
-    items = fields.List()
+class FaradayListSchema(TypeSchema):
+    items = fields.List(fields.Raw())
     _type = FaradayList
+    _composed_list = []
+
+    @validates('items')
+    def validate_length_characters(self, items):
+        for item in items:
+            if not isinstance(item, self._composed_list):
+                raise ValidationError(f"Item not valid in list")
