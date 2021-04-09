@@ -33,7 +33,7 @@ setup(
     ],
     description="The faraday agents run code remotely from the faraday server. The server sets the parameters of the code, and this repository sets the models to by used by both sides.",
     install_requires=requirements,
-    license="MIT license",
+    license="GNU General Public License v3",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='faraday_agent_parameters_types',
