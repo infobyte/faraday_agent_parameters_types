@@ -11,6 +11,7 @@ class FaradayList(Type):
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
         self.items = items
+        self.value_dict = {"items": items}
 
     def __str__(self):
         return NAME_TYPE_CLASS

@@ -12,6 +12,7 @@ class FaradayBoolean(Type):
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
         self.option = option
+        self.value_dict = {"option": option}
 
 
 class FaradayBooleanSchema(TypeSchema):
