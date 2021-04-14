@@ -8,10 +8,11 @@ from tests.config.agent_manifests import (
 )
 
 from faraday_agent_parameters_types.custom_types \
-    import faraday_integer, faraday_string, faraday_boolean, faraday_list
+    import faraday_integer, faraday_string, faraday_boolean, faraday_list, faraday_int_range
 
 indentify_dict = [
     {"obj": {"type": "integer"}, "class": faraday_integer.FaradayIntegerSchema()},
+    {"obj": {"type": "range"}, "class": faraday_int_range.FaradayRangeSchema()},
     {"obj": {"type": "string"}, "class": faraday_string.FaradayStringSchema()},
     {"obj": {"type": "boolean"}, "class": faraday_boolean.FaradayBooleanSchema()},
     {"obj": {"type": "list", "composed": ["integer", "string"]}, "class": faraday_list.FaradayListSchema()},
@@ -34,6 +35,10 @@ field_dict = [
      "fields": {"data": {'option': "true"}, "value": {'option': True}}, },
     {"obj": {"type": "list", "composed": (int, str)}, "class": faraday_list.FaradayListSchema(),
      "fields": {"data": {'items': [1, "test_data"]}, "value": {'items': [1, "test_data"]}}, },
+    {"obj": {"type": "range"}, "class": faraday_int_range.FaradayRangeSchema(),
+     "fields": {"data": {'int_range': "1-4"}, "value": {'int_range': [1, 2, 3, 4]}}, },
+    {"obj": {"type": "range"}, "class": faraday_int_range.FaradayRangeSchema(),
+     "fields": {"data": {'int_range': [4, 5, 6, 7]}, "value": {'int_range': [4, 5, 6, 7]}}, },
 ]
 
 
