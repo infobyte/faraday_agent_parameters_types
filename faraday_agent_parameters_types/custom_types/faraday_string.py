@@ -11,6 +11,7 @@ class FaradayString(Type):
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
         self.text = text
+        self.value_dict = {"text": text}
 
 
 class FaradayStringSchema(TypeSchema):

@@ -11,6 +11,7 @@ class FaradayInteger(Type):
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
         self.number = number
+        self.value_dict = {"number": number}
 
     def __str__(self):
         return NAME_TYPE_CLASS

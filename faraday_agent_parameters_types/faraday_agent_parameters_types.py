@@ -4,6 +4,7 @@ from marshmallow import Schema, post_load
 class Type:
     def __init__(self, class_name):
         self.class_name = class_name
+        self.value_dict = {}
 
     def __repr__(self):
         return self.class_name

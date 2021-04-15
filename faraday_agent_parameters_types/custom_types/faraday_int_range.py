@@ -23,7 +23,7 @@ def validate_list(_list):
 
 class FaradayRangeField(fields.Field):
 
-    def _deserialize(self, value, attr, data, **kwargs):
+    def _serialize(self, value, attr, obj, **kwargs):
         if value is None:
             return ""
         if isinstance(value, str):
@@ -33,7 +33,7 @@ class FaradayRangeField(fields.Field):
             return f"{value[0]}-{value[-1]}"
         raise ValidationError("Invalid Data Type")
 
-    def _serialize(self, value, attr, obj, **kwargs):
+    def _deserialize(self, value, attr, data, **kwargs):
         if value is None:
             return []
         if isinstance(value, list):
@@ -52,6 +52,7 @@ class FaradayRange(Type):
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
         self.int_range = int_range
+        self.value_dict = {"int_range": int_range}
 
     def __str__(self):
         return NAME_TYPE_CLASS

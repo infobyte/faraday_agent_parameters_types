@@ -23,22 +23,56 @@ indentify_dict = [
 ]
 
 field_dict = [
-    {"obj": {"type": "integer"}, "class": faraday_integer.FaradayIntegerSchema(),
-     "fields": {"data": {'number': 1}, "value": {'number': 1}}, },
-    {"obj": {"type": "integer"}, "class": faraday_integer.FaradayIntegerSchema(),
-     "fields": {"data": {'number': "1"}, "value": {'number': 1}}, },
-    {"obj": {"type": "string"}, "class": faraday_string.FaradayStringSchema(),
-     "fields": {"data": {'text': "text_string"}, "value": {'text': "text_string"}}, },
-    {"obj": {"type": "boolean"}, "class": faraday_boolean.FaradayBooleanSchema(),
-     "fields": {"data": {'option': True}, "value": {'option': True}}, },
-    {"obj": {"type": "boolean"}, "class": faraday_boolean.FaradayBooleanSchema(),
-     "fields": {"data": {'option': "true"}, "value": {'option': True}}, },
-    {"obj": {"type": "list", "composed": (int, str)}, "class": faraday_list.FaradayListSchema(),
-     "fields": {"data": {'items': [1, "test_data"]}, "value": {'items': [1, "test_data"]}}, },
-    {"obj": {"type": "range"}, "class": faraday_int_range.FaradayRangeSchema(),
-     "fields": {"data": {'int_range': "1-4"}, "value": {'int_range': [1, 2, 3, 4]}}, },
-    {"obj": {"type": "range"}, "class": faraday_int_range.FaradayRangeSchema(),
-     "fields": {"data": {'int_range': [4, 5, 6, 7]}, "value": {'int_range': [4, 5, 6, 7]}}, },
+    {"obj": {"type": "integer"},
+     "class": faraday_integer.FaradayIntegerSchema(),
+     "deser": {"fields": [{"data": {'number': 1},
+                          "value": {'number': 1}},
+                          {"data": {'number': "1"},
+                           "value": {'number': 1}},
+                          ], },
+     "ser": {"fields": [{"data": {'number': 1},
+                        "value": {'number': 1}},
+                        {"data": {'number': "1"},
+                         "value": {'number': 1}},
+                        ], }},
+
+    {"obj": {"type": "string"},
+     "class": faraday_string.FaradayStringSchema(),
+     "deser": {"fields": [{"data": {'text': "text_string"},
+                          "value": {'text': "text_string"}}], },
+     "ser": {"fields": [{"data": {'text': "text_string"},
+                        "value": {'text': "text_string"}}], }},
+
+    {"obj": {"type": "boolean"},
+     "class": faraday_boolean.FaradayBooleanSchema(),
+     "deser": {"fields": [{"data": {'option': True},
+                          "value": {'option': True}},
+                          {"data": {'option': "true"},
+                           "value": {'option': True}},
+                          ], },
+     "ser": {"fields": [{"data": {'option': True},
+                         "value": {'option': True}},
+                        {"data": {'option': "true"},
+                         "value": {'option': True}},
+                        ], }},
+
+    {"obj": {"type": "list", "composed": (int, str)},
+     "class": faraday_list.FaradayListSchema(),
+     "deser": {"fields": [{"data": {'items': [1, "test_data"]},
+                          "value": {'items': [1, "test_data"]}}], },
+     "ser": {"fields": [{"data": {'items': [1, "test_data"]},
+                        "value": {'items': [1, "test_data"]}}], }},
+
+    {"obj": {"type": "range"},
+     "class": faraday_int_range.FaradayRangeSchema(),
+     "deser": {"fields": [{"data": {'int_range': "1-4"},
+                          "value": {'int_range': [1, 2, 3, 4]}},
+                          {"data": {'int_range': [4, 5, 6, 7]},
+                           "value": {'int_range': [4, 5, 6, 7]}}
+                          ], },
+     "ser": {"fields": [{"data": {'int_range': [1, 2, 3, 4]},
+                        "value": {'int_range': "1-4"}}
+                        ], }},
 ]
 
 
@@ -55,10 +89,22 @@ def test_to_object(case):
 
 # Here goes an import, or an example list
 @pytest.mark.parametrize("field", field_dict)
-def test_serializar_deserialize(field):
-    value = field['fields']['value']
-    data = field['fields']['data']
+def test_deserialize(field):
+    fields = field['deser']['fields']
     if field['obj']['type'] == 'list':
         field['class']._composed_list = field['obj']['composed']
-    load_data = field['class'].load(data)
-    assert field['class'].dump(load_data) == value
+    for entry in fields:
+        value = entry['value']
+        data = entry['data']
+        assert field['class'].load(data).value_dict == value
+
+
+@pytest.mark.parametrize("field", field_dict)
+def test_serialize(field):
+    fields = field['ser']['fields']
+    if field['obj']['type'] == 'list':
+        field['class']._composed_list = field['obj']['composed']
+    for entry in fields:
+        value = entry['value']
+        data = entry['data']
+        assert field['class'].dump(data) == value
