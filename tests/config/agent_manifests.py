@@ -2,7 +2,7 @@ from pathlib import Path
 import os
 import json
 from faraday_agent_parameters_types.custom_types \
-    import faraday_integer, faraday_string, faraday_boolean, faraday_list, faraday_int_range
+    import faraday_integer, faraday_string, faraday_boolean, faraday_list, faraday_int_range, faraday_ip
 
 DATA_FOLDER = Path(__file__).parent.parent / "data"
 
@@ -11,7 +11,8 @@ DATA_TYPE = {
     "string": faraday_string.FaradayStringSchema(),
     "boolean": faraday_boolean.FaradayBooleanSchema(),
     "list": faraday_list.FaradayListSchema(),
-    "range": faraday_int_range.FaradayRangeSchema()
+    "range": faraday_int_range.FaradayRangeSchema(),
+    "ip": faraday_ip.FaradayIPSchema()
 }
 
 
