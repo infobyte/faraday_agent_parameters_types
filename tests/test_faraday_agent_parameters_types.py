@@ -8,7 +8,9 @@ from tests.config.agent_manifests import (
 )
 
 from faraday_agent_parameters_types.custom_types \
-    import faraday_integer, faraday_string, faraday_boolean, faraday_list, faraday_int_range
+    import faraday_integer, faraday_string, faraday_boolean, faraday_list, faraday_int_range, faraday_ip
+
+from ipaddress import IPv4Address, IPv6Address
 
 indentify_dict = [
     {"obj": {"type": "integer"}, "class": faraday_integer.FaradayIntegerSchema()},
@@ -16,6 +18,7 @@ indentify_dict = [
     {"obj": {"type": "string"}, "class": faraday_string.FaradayStringSchema()},
     {"obj": {"type": "boolean"}, "class": faraday_boolean.FaradayBooleanSchema()},
     {"obj": {"type": "list", "composed": ["integer", "string"]}, "class": faraday_list.FaradayListSchema()},
+    {"obj": {"type": "ip"}, "class": faraday_ip.FaradayIPSchema()},
     # {"obj": {"type": "list", "of": {"type": "boolean"}}, "class": List(Boolean())},
     # {"obj": {"type": "or", "of": ({"type": "boolean"}, {"type": "string"})}, "class": Or(Boolean(), String())},
     # {"obj": {"type": "list", "of": {"type": "or", "of": ({"type": "boolean"}, {"type": "string"})}},
@@ -72,6 +75,21 @@ field_dict = [
                           ], },
      "ser": {"fields": [{"data": {'int_range': [1, 2, 3, 4]},
                         "value": {'int_range': "1-4"}}
+                        ], }},
+
+    {"obj": {"type": "ip"},
+     "class": faraday_ip.FaradayIPSchema(),
+     "deser": {"fields": [{"data": {'ip': "192.168.0.1"},
+                          "value": {'ip': IPv4Address('192.168.0.1')}},
+                          {"data": {'ip': "2001:db8:0:0:0:0:2:1"},
+                          "value": {'ip': IPv6Address('2001:db8:0:0:0:0:2:1')}},
+                          {"data": {'ip': "2001:db8::2:1"},
+                          "value": {'ip': IPv6Address('2001:db8:0:0:0:0:2:1')}},
+                          ], },
+     "ser": {"fields": [{"data": {'ip': IPv4Address('192.168.0.1')},
+                        "value": {'ip': "192.168.0.1"}},
+                        {"data": {'ip': IPv6Address('2001:db8:0:0:0:0:2:1')},
+                         "value": {'ip': "2001:db8::2:1"}},
                         ], }},
 ]
 
