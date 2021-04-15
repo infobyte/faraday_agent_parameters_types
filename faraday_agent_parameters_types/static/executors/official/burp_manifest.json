@@ -1,9 +1,9 @@
 {
   "arguments": {
-    "API_HOST": true,
-    "API_KEY": true,
-    "TARGET_URL": true,
-    "NAMED_CONFIGURATION": false
+    "API_HOST": {"mandatory": true, "type": "string"},
+    "API_KEY": {"mandatory": true, "type": "string"},
+    "TARGET_URL": {"mandatory": true, "type": "string"},
+    "NAMED_CONFIGURATION": {"mandatory": false, "type": "string"}
   },
   "environment_variables": [
   ],

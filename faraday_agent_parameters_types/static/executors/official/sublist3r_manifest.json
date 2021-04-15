@@ -1,6 +1,6 @@
 {
   "arguments": {
-    "DOMAIN": true
+    "DOMAIN": {"mandatory": true, "type": "string"}
   },
   "environment_variables": [
 

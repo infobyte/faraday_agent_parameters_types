@@ -1,7 +1,7 @@
 {
   "arguments": {
-    "NUCLEI_TARGET": true,
-    "NUCLEI_EXCLUDE": false
+    "NUCLEI_TARGET": {"mandatory": true, "type": "string"},
+    "NUCLEI_EXCLUDE": {"mandatory": false, "type": "string"}
   },
   "environment_variables": [
     "NUCLEI_TEMPLATES"

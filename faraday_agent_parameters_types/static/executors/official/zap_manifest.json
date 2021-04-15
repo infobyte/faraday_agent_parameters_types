@@ -1,7 +1,7 @@
 {
   "arguments": {
-    "TARGET_URL": true,
-    "API_KEY": true
+    "TARGET_URL": {"mandatory": true, "type": "string"},
+    "API_KEY": {"mandatory": true, "type": "string"}
   },
   "environment_variables": [
   ],

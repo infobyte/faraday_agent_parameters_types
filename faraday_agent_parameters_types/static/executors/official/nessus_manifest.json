@@ -1,9 +1,9 @@
 {
   "arguments": {
-    "NESSUS_SCAN_NAME":  false,
-    "NESSUS_URL": false,
-    "NESSUS_SCAN_TARGET": true,
-    "NESSUS_SCAN_TEMPLATE": false
+    "NESSUS_SCAN_NAME":  {"mandatory": false, "type": "string"},
+    "NESSUS_URL": {"mandatory": false, "type": "string"},
+    "NESSUS_SCAN_TARGET": {"mandatory": true, "type": "string"},
+    "NESSUS_SCAN_TEMPLATE": {"mandatory": false, "type": "string"}
   },
   "environment_variables": [
     "NESSUS_USERNAME",

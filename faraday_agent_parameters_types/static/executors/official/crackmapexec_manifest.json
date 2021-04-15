@@ -1,10 +1,10 @@
 {
   "arguments": {
-    "CRACKMAPEXEC_IP":  true,
-    "CRACKMAPEXEC_USER": false,
-    "CRACKMAPEXEC_PASS": false,
-    "CRACKMAPEXEC_LPORT": false,
-    "CRACKMAPEXEC_LHOST": false
+    "CRACKMAPEXEC_IP":  {"mandatory": true, "type": "ip"},
+    "CRACKMAPEXEC_USER": {"mandatory": false, "type": "string"},
+    "CRACKMAPEXEC_PASS": {"mandatory": false, "type": "string"},
+    "CRACKMAPEXEC_LPORT": {"mandatory": false, "type": "integer"},
+    "CRACKMAPEXEC_LHOST": {"mandatory": false, "type": "string"}
   },
   "environment_variables": [
 

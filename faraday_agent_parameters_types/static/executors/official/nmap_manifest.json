@@ -1,13 +1,13 @@
 {
   "arguments": {
-    "TARGET": true,
-    "PORT_LIST": false,
-    "OPTION_SC": false ,
-    "OPTION_SV": false ,
-    "OPTION_PN": false ,
-    "SCRIPT_TIMEOUT": false ,
-    "HOST_TIMEOUT": false ,
-    "TOP_PORTS": false
+    "TARGET": {"mandatory": true, "type": "ip"},
+    "PORT_LIST": {"mandatory": false, "type": "range"},
+    "OPTION_SC": {"mandatory": false, "type": "boolean"},
+    "OPTION_SV": {"mandatory": false, "type": "boolean"},
+    "OPTION_PN": {"mandatory": false, "type": "boolean"},
+    "SCRIPT_TIMEOUT": {"mandatory": false, "type": "integer"},
+    "HOST_TIMEOUT": {"mandatory": false, "type": "integer"},
+    "TOP_PORTS": {"mandatory": false, "type": "list"}
   },
   "environment_variables": [
 

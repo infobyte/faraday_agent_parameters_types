@@ -1,7 +1,7 @@
 {
   "arguments": {
-    "TARGET_URL": true,
-    "TARGET_PORT": false
+    "TARGET_URL": {"mandatory": true, "type": "string"},
+    "TARGET_PORT": {"mandatory": false, "type": "integer"}
   },
   "environment_variables": [
 

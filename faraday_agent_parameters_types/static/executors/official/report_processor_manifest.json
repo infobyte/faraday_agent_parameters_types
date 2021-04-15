@@ -1,7 +1,7 @@
 {
   "arguments": {
-    "REPORT_NAME":  true,
-    "CONFIG_TOOL": false
+    "REPORT_NAME":  {"mandatory": true, "type": "string"},
+    "CONFIG_TOOL": {"mandatory": false, "type": "string"}
   },
   "environment_variables": [
     "REPORTS_PATH"
