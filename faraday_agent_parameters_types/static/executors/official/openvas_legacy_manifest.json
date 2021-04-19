@@ -1,0 +1,17 @@
+{
+  "arguments": {
+    "OPENVAS_USER": {"mandatory": true, "type": "string"},
+    "OPENVAS_PASSW": {"mandatory": true, "type": "string"},
+    "OPENVAS_HOST": {"mandatory": true, "type": "ip"},
+    "OPENVAS_PORT": {"mandatory": true, "type": "integer"},
+    "OPENVAS_SCAN_URL": {"mandatory": true, "type": "string"},
+    "OPENVAS_SCAN_ID": {"mandatory": false, "type": "string"}
+  },
+  "environment_variables": [
+
+  ],
+  "check_cmds": [
+    "omp --help"
+  ],
+  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+}

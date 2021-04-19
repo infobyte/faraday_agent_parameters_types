@@ -1,0 +1,13 @@
+{
+  "arguments": {
+    "NUCLEI_TARGET": {"mandatory": true, "type": "string"},
+    "NUCLEI_EXCLUDE": {"mandatory": false, "type": "string"}
+  },
+  "environment_variables": [
+    "NUCLEI_TEMPLATES"
+  ],
+  "check_cmds": [
+    "nuclei --version"
+  ],
+  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+}

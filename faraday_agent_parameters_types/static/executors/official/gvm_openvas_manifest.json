@@ -1,0 +1,25 @@
+{
+  "arguments": {
+    "SCAN_TARGET": {"mandatory": true, "type": "string"},
+    "PORT_LIST_ID": {"mandatory": false, "type": "string"},
+    "SCAN_ID": {"mandatory": false, "type": "string"},
+    "CONNECTION_TYPE": {"mandatory": true, "type": "string"},
+    "SOCKET_PATH": {"mandatory": false, "type": "string"},
+    "SSH_USER": {"mandatory": false, "type": "string"},
+    "SSH_PASSW": {"mandatory": false, "type": "string"},
+    "TLS_CERTFILE_PATH": {"mandatory": false, "type": "string"},
+    "TLS_CAFILE_PATH": {"mandatory": false, "type": "string"},
+    "TLS_KEYFILE_PATH": {"mandatory": false, "type": "string"},
+    "TLS_PKEY_PASSW": {"mandatory": false, "type": "string"}
+  },
+  "environment_variables": [
+    "GVM_USER",
+    "GVM_PASSW",
+    "HOST",
+    "PORT"
+  ],
+  "check_cmds": [
+    "python3 -m pip show python-gvm"
+  ],
+  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+}

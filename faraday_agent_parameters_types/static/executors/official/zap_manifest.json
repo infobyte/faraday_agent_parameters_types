@@ -1,0 +1,12 @@
+{
+  "arguments": {
+    "TARGET_URL": {"mandatory": true, "type": "string"},
+    "API_KEY": {"mandatory": true, "type": "string"}
+  },
+  "environment_variables": [
+  ],
+  "check_cmds": [
+
+  ],
+  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+}

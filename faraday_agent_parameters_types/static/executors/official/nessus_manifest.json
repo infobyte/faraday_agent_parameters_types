@@ -1,0 +1,17 @@
+{
+  "arguments": {
+    "NESSUS_SCAN_NAME":  {"mandatory": false, "type": "string"},
+    "NESSUS_URL": {"mandatory": false, "type": "string"},
+    "NESSUS_SCAN_TARGET": {"mandatory": true, "type": "string"},
+    "NESSUS_SCAN_TEMPLATE": {"mandatory": false, "type": "string"}
+  },
+  "environment_variables": [
+    "NESSUS_USERNAME",
+    "NESSUS_PASSWORD",
+    "NESSUS_URL"
+  ],
+  "check_cmds": [
+
+  ],
+  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+}
