@@ -6,15 +6,15 @@ NAME_TYPE_CLASS = "boolean"
 
 
 class FaradayBoolean(Type):
-    def __init__(self, option: 'Boolean Field' = True):
+    def __init__(self, data: 'Boolean Field' = True):
         """
         Type: Faraday Boolean.
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.option = option
-        self.value_dict = {"option": option}
+        self.data = data
+        self.value_dict = {"data": data}
 
 
 class FaradayBooleanSchema(TypeSchema):
-    option = fields.Boolean()
+    data = fields.Boolean()
     _type = FaradayBoolean

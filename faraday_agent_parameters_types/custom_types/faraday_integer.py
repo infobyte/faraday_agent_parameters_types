@@ -5,18 +5,18 @@ NAME_TYPE_CLASS = "integer"
 
 
 class FaradayInteger(Type):
-    def __init__(self, number=0):
+    def __init__(self, data=0):
         """
         Type: Numero enero
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.number = number
-        self.value_dict = {"number": number}
+        self.data = data
+        self.value_dict = {"data": data}
 
     def __str__(self):
         return NAME_TYPE_CLASS
 
 
 class FaradayIntegerSchema(TypeSchema):
-    number = fields.Integer()
+    data = fields.Integer()
     _type = FaradayInteger

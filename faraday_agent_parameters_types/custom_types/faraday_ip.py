@@ -5,18 +5,18 @@ NAME_TYPE_CLASS = "ip"
 
 
 class FaradayIP(Type):
-    def __init__(self, ip=""):
+    def __init__(self, data=""):
         """
         Type: ip
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.ip = ip
-        self.value_dict = {"ip": ip}
+        self.data = data
+        self.value_dict = {"data": data}
 
     def __str__(self):
         return NAME_TYPE_CLASS
 
 
 class FaradayIPSchema(TypeSchema):
-    ip = fields.IP()
+    data = fields.IP()
     _type = FaradayIP

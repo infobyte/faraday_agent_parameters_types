@@ -32,19 +32,19 @@ field_dict = [
     {"obj": {"type": "integer"},
      "class": faraday_integer.FaradayIntegerSchema(),
      "valid": {
-         "deser": {"fields": [{"data": {'number': 1},
-                               "value": {'number': 1}},
-                              {"data": {'number': "1"},
-                               "value": {'number': 1}},
+         "deser": {"fields": [{"data": {'data': 1},
+                               "value": {'data': 1}},
+                              {"data": {'data': "1"},
+                               "value": {'data': 1}},
                               ], },
-         "ser": {"fields": [{"data": {'number': 1},
-                             "value": {'number': 1}},
-                            {"data": {'number': "1"},
-                             "value": {'number': 1}},
+         "ser": {"fields": [{"data": {'data': 1},
+                             "value": {'data': 1}},
+                            {"data": {'data': "1"},
+                             "value": {'data': 1}},
                             ], }},
      "invalid": [
          "test",
-         {'number': "text"}
+         {'data': "text"}
      ]
      },
 
@@ -52,10 +52,10 @@ field_dict = [
 
     {"obj": {"type": "string"},
      "class": faraday_string.FaradayStringSchema(),
-     "valid": {"deser": {"fields": [{"data": {'text': "text_string"},
-                                     "value": {'text': "text_string"}}], },
-               "ser": {"fields": [{"data": {'text': "text_string"},
-                                   "value": {'text': "text_string"}}], }},
+     "valid": {"deser": {"fields": [{"data": {'data': "text_string"},
+                                     "value": {'data': "text_string"}}], },
+               "ser": {"fields": [{"data": {'data': "text_string"},
+                                   "value": {'data': "text_string"}}], }},
      "invalid": [
          "test",
      ]
@@ -65,24 +65,24 @@ field_dict = [
 
     {"obj": {"type": "boolean"},
      "class": faraday_boolean.FaradayBooleanSchema(),
-     "valid": {"deser": {"fields": [{"data": {'option': True},
-                                     "value": {'option': True}},
-                                    {"data": {'option': "true"},
-                                     "value": {'option': True}},
-                                    {"data": {'option': 1},
-                                     "value": {'option': True}},
+     "valid": {"deser": {"fields": [{"data": {'data': True},
+                                     "value": {'data': True}},
+                                    {"data": {'data': "true"},
+                                     "value": {'data': True}},
+                                    {"data": {'data': 1},
+                                     "value": {'data': True}},
                                     ], },
-               "ser": {"fields": [{"data": {'option': True},
-                                   "value": {'option': True}},
-                                  {"data": {'option': "true"},
-                                   "value": {'option': True}},
-                                  {"data": {'option': 1},
-                                   "value": {'option': True}},
+               "ser": {"fields": [{"data": {'data': True},
+                                   "value": {'data': True}},
+                                  {"data": {'data': "true"},
+                                   "value": {'data': True}},
+                                  {"data": {'data': 1},
+                                   "value": {'data': True}},
                                   ], }},
      "invalid": [
          "test",
-         {'option': "test"},
-         {'option': 3}
+         {'data': "test"},
+         {'data': 3}
      ]
      },
 
@@ -90,15 +90,15 @@ field_dict = [
 
     {"obj": {"type": "list", "composed": (int, str)},
      "class": faraday_list.FaradayListSchema(),
-     "valid": {"deser": {"fields": [{"data": {'items': [1, "test_data"]},
-                                     "value": {'items': [1, "test_data"]}}], },
-               "ser": {"fields": [{"data": {'items': [1, "test_data"]},
-                                   "value": {'items': [1, "test_data"]}}], }},
+     "valid": {"deser": {"fields": [{"data": {'data': [1, "test_data"]},
+                                     "value": {'data': [1, "test_data"]}}], },
+               "ser": {"fields": [{"data": {'data': [1, "test_data"]},
+                                   "value": {'data': [1, "test_data"]}}], }},
      "invalid": [
          "test",
-         {'items': 1},
-         {'items': "test"},
-         {'items': {"test": "test"}}
+         {'data': 1},
+         {'data': "test"},
+         {'data': {"test": "test"}}
      ]
      },
 
@@ -106,21 +106,21 @@ field_dict = [
 
     {"obj": {"type": "range"},
      "class": faraday_int_range.FaradayRangeSchema(),
-     "valid": {"deser": {"fields": [{"data": {'int_range': "1-4"},
-                                     "value": {'int_range': [1, 2, 3, 4]}},
-                                    {"data": {'int_range': [4, 5, 6, 7]},
-                                     "value": {'int_range': [4, 5, 6, 7]}}
+     "valid": {"deser": {"fields": [{"data": {'data': "1-4"},
+                                     "value": {'data': [1, 2, 3, 4]}},
+                                    {"data": {'data': [4, 5, 6, 7]},
+                                     "value": {'data': [4, 5, 6, 7]}}
                                     ], },
-               "ser": {"fields": [{"data": {'int_range': [1, 2, 3, 4]},
-                                   "value": {'int_range': "1-4"}}
+               "ser": {"fields": [{"data": {'data': [1, 2, 3, 4]},
+                                   "value": {'data': "1-4"}}
                                   ], }},
      "invalid": [
          "test",
-         {'int_range': "6-4"},
-         {'int_range': "test"},
-         {'int_range': 1},
-         {'int_range': 1 - 4},
-         {'int_range': [1, 2, "Test", 4]}
+         {'data': "6-4"},
+         {'data': "test"},
+         {'data': 1},
+         {'data': 1 - 4},
+         {'data': [1, 2, "Test", 4]}
      ]
      },
 
@@ -128,23 +128,23 @@ field_dict = [
 
     {"obj": {"type": "ip"},
      "class": faraday_ip.FaradayIPSchema(),
-     "valid": {"deser": {"fields": [{"data": {'ip': "192.168.0.1"},
-                                     "value": {'ip': IPv4Address('192.168.0.1')}},
-                                    {"data": {'ip': "2001:db8:0:0:0:0:2:1"},
-                                     "value": {'ip': IPv6Address('2001:db8:0:0:0:0:2:1')}},
-                                    {"data": {'ip': "2001:db8::2:1"},
-                                     "value": {'ip': IPv6Address('2001:db8:0:0:0:0:2:1')}},
+     "valid": {"deser": {"fields": [{"data": {'data': "192.168.0.1"},
+                                     "value": {'data': IPv4Address('192.168.0.1')}},
+                                    {"data": {'data': "2001:db8:0:0:0:0:2:1"},
+                                     "value": {'data': IPv6Address('2001:db8:0:0:0:0:2:1')}},
+                                    {"data": {'data': "2001:db8::2:1"},
+                                     "value": {'data': IPv6Address('2001:db8:0:0:0:0:2:1')}},
                                     ], },
-               "ser": {"fields": [{"data": {'ip': IPv4Address('192.168.0.1')},
-                                   "value": {'ip': "192.168.0.1"}},
-                                  {"data": {'ip': IPv6Address('2001:db8:0:0:0:0:2:1')},
-                                   "value": {'ip': "2001:db8::2:1"}},
+               "ser": {"fields": [{"data": {'data': IPv4Address('192.168.0.1')},
+                                   "value": {'data': "192.168.0.1"}},
+                                  {"data": {'data': IPv6Address('2001:db8:0:0:0:0:2:1')},
+                                   "value": {'data': "2001:db8::2:1"}},
                                   ], }},
      "invalid": [
          "test",
-         {'ip': "192.168..1"},
-         {'ip': "test"},
-         {'ip': [192, 168, 0, 1]}
+         {'data': "192.168..1"},
+         {'data': "test"},
+         {'data': [192, 168, 0, 1]}
      ]
      },
 ]

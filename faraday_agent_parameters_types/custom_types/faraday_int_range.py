@@ -46,19 +46,19 @@ class FaradayRangeField(fields.Field):
 
 
 class FaradayRange(Type):
-    def __init__(self, int_range=list):
+    def __init__(self, data=list):
         """
         Type: Range
         """
         Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.int_range = int_range
-        self.value_dict = {"int_range": int_range}
+        self.data = data
+        self.value_dict = {"data": data}
 
     def __str__(self):
         return NAME_TYPE_CLASS
 
 
 class FaradayRangeSchema(TypeSchema):
-    int_range = FaradayRangeField()
+    data = FaradayRangeField()
     _type = FaradayRange
 
