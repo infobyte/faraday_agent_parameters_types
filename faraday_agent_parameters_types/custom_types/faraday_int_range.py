@@ -1,5 +1,5 @@
 from ..faraday_agent_parameters_types import Type, TypeSchema
-from marshmallow import fields, ValidationError, validates
+from marshmallow import fields, ValidationError
 import re
 
 NAME_TYPE_CLASS = "range"
@@ -22,7 +22,6 @@ def validate_list(_list):
 
 
 class FaradayRangeField(fields.Field):
-
     def _serialize(self, value, attr, obj, **kwargs):
         if value is None:
             return ""
@@ -61,4 +60,3 @@ class FaradayRange(Type):
 class FaradayRangeSchema(TypeSchema):
     data = FaradayRangeField()
     _type = FaradayRange
-

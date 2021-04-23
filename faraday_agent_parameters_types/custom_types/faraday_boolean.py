@@ -6,7 +6,7 @@ NAME_TYPE_CLASS = "boolean"
 
 
 class FaradayBoolean(Type):
-    def __init__(self, data: 'Boolean Field' = True):
+    def __init__(self, data: bool = True):
         """
         Type: Faraday Boolean.
         """

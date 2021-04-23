@@ -5,7 +5,7 @@ NAME_TYPE_CLASS = "string"
 
 
 class FaradayString(Type):
-    def __init__(self,  data: 'Only String field' = ""):
+    def __init__(self, data: str = ""):
         """
         Type: Faraday String.
         """
@@ -18,7 +18,7 @@ class FaradayStringSchema(TypeSchema):
     data = fields.String()
     _type = FaradayString
 
-    @validates('data')
+    @validates("data")
     def validate_length_characters(self, text):
         if len(text) > 256:
             raise ValidationError(f"Max length 256. Your text {len(text)}")

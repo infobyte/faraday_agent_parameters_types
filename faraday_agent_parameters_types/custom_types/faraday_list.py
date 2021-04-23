@@ -22,8 +22,8 @@ class FaradayListSchema(TypeSchema):
     _type = FaradayList
     _composed_list = []
 
-    @validates('data')
+    @validates("data")
     def validate_length_characters(self, items):
         for item in items:
             if not isinstance(item, self._composed_list):
-                raise ValidationError(f"Item not valid in list")
+                raise ValidationError("Item not valid in list")
