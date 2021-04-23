@@ -51,6 +51,7 @@ setup(
     to a faraday server instance, which had set the parameters of the code. This repository sets the models to be used
     by both sides.""",
     install_requires=requirements,
+    extras_require=extra_req,
     license="GNU General Public License v3",
     long_description=readme + "\n\n" + history,
     long_description_content_type="text/markdown",
