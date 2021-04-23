@@ -25,6 +25,8 @@
       - if: '$CI_COMMIT_REF_NAME =~ /^.*ci-test.*$/'
         when: never
       - when: on_success
+    tags:
+        - faradaytests
 
 .latest_unit_test_base:
   extends: .unit_tests_base
