@@ -186,7 +186,7 @@ field_dict = [
 @pytest.mark.parametrize("case", indentify_dict)
 def test_indentify_type(case):
     # In base of obj, it should recognize the class
-    assert isinstance(indentify(case["obj"]), type(case["class"]))
+    assert isinstance(indentify(case["obj"]), case["class"])
 
 
 @pytest.mark.parametrize("case", indentify_dict)
