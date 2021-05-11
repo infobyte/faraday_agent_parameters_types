@@ -1,4 +1,4 @@
-from faraday_agent_parameters_types.utils.data_types import DATA_TYPE
+from faraday_agent_parameters_types.data_types import DATA_TYPE
 
 
 def type_validate(p_type: str, data):
