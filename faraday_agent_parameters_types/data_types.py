@@ -16,4 +16,11 @@ DATA_TYPE = {
     "ip": faraday_ip.FaradayIPSchema(),
 }
 
-BASE_TYPE = ["integer", "string", "boolean", "list"]
+BASE_TYPE = {
+    "integer": "integer",
+    "string": "string",
+    "boolean": "boolean",
+    "list": "list",
+    "range": "string",
+    "ip": "string"
+}
