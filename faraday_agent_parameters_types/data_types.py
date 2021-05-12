@@ -15,3 +15,5 @@ DATA_TYPE = {
     "range": faraday_int_range.FaradayRangeSchema(),
     "ip": faraday_ip.FaradayIPSchema(),
 }
+
+BASE_TYPE = ["integer", "string", "boolean", "list"]

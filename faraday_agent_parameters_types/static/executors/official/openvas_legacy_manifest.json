@@ -1,11 +1,11 @@
 {
   "arguments": {
-    "OPENVAS_USER": {"mandatory": true, "type": "string"},
-    "OPENVAS_PASSW": {"mandatory": true, "type": "string"},
-    "OPENVAS_HOST": {"mandatory": true, "type": "ip"},
-    "OPENVAS_PORT": {"mandatory": true, "type": "integer"},
-    "OPENVAS_SCAN_URL": {"mandatory": true, "type": "string"},
-    "OPENVAS_SCAN_ID": {"mandatory": false, "type": "string"}
+    "OPENVAS_USER": {"mandatory": true, "type": "string", "base": "string"},
+    "OPENVAS_PASSW": {"mandatory": true, "type": "string", "base": "string"},
+    "OPENVAS_HOST": {"mandatory": true, "type": "ip", "base": "string"},
+    "OPENVAS_PORT": {"mandatory": true, "type": "integer", "base": "string"},
+    "OPENVAS_SCAN_URL": {"mandatory": true, "type": "string", "base": "string"},
+    "OPENVAS_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"}
   },
   "environment_variables": [
 

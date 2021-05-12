@@ -1,13 +1,13 @@
 {
   "arguments": {
-    "TARGET": "true,ip",
-    "PORT_LIST": "false,range",
-    "OPTION_SC": "false,boolean",
-    "OPTION_SV": "false,boolean",
-    "OPTION_PN": "false,boolean",
-    "SCRIPT_TIMEOUT": "false,integer",
-    "HOST_TIMEOUT": "false,integer",
-    "TOP_PORTS": "false,list"
+    "TARGET": {"mandatory": true, "type": "ip", "base": "string"},
+    "PORT_LIST": {"mandatory": false, "type": "range", "base": "string"},
+    "OPTION_SC": {"mandatory": false, "type": "boolean", "base": "boolean"},
+    "OPTION_SV": {"mandatory": false, "type": "boolean", "base": "boolean"},
+    "OPTION_PN": {"mandatory": false, "type": "boolean", "base": "boolean"},
+    "SCRIPT_TIMEOUT": {"mandatory": false, "type": "integer", "base": "integer"},
+    "HOST_TIMEOUT": {"mandatory": false, "type": "integer", "base": "integer"},
+    "TOP_PORTS": {"mandatory": false, "type": "list", "base": "list"}
   },
   "environment_variables": [
 

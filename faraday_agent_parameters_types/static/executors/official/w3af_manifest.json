@@ -1,6 +1,6 @@
 {
   "arguments": {
-    "W3AF_TARGET_URL": {"mandatory": true, "type": "string"}
+    "W3AF_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
   },
   "environment_variables": [
     "W3AF_PATH"

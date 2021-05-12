@@ -1,6 +1,6 @@
 {
   "arguments": {
-    "WPSCAN_TARGET_URL": {"mandatory": true, "type": "string"}
+    "WPSCAN_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
   },
   "environment_variables": [
 
