@@ -22,5 +22,5 @@ BASE_TYPE = {
     "boolean": "boolean",
     "list": "list",
     "range": "string",
-    "ip": "string"
+    "ip": "string",
 }
