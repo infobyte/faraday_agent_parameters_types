@@ -4,6 +4,7 @@
 
 import pytest
 from tests.config.agent_manifests import indentify
+from faraday_agent_parameters_types.data_types import DATA_TYPE, BASE_TYPE, valid_base_types
 
 from faraday_agent_parameters_types.custom_types import (
     faraday_integer,
@@ -181,6 +182,20 @@ field_dict = [
         ],
     },
 ]
+
+
+def test_data_type_and_base_type():
+    for d_type in DATA_TYPE:
+        if d_type not in BASE_TYPE:
+            print(f'\n\nBASE_TYPE NOT ASSIGNED FOR "{d_type}"\nGo to data_types.py and assign a base type to it')
+            assert False
+
+
+def test_base_type_valid():
+    for b_value in BASE_TYPE.values():
+        if b_value not in valid_base_types:
+            print(f'\n\n"{b_value}" is not a valid base type')
+            assert False
 
 
 @pytest.mark.parametrize("case", indentify_dict)

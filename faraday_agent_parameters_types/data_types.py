@@ -16,6 +16,14 @@ DATA_TYPE = {
     "ip": faraday_ip.FaradayIPSchema(),
 }
 
+valid_base_types = (
+    "integer",
+    "string",
+    "boolean",
+    "list",
+)
+
+# Lookup table to match a data type to a base type
 BASE_TYPE = {
     "integer": "integer",
     "string": "string",
