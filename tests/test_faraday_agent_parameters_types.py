@@ -13,6 +13,7 @@ from faraday_agent_parameters_types.custom_types import (
     faraday_list,
     faraday_int_range,
     faraday_ip,
+    faraday_float,
 )
 
 from ipaddress import IPv4Address, IPv6Address
@@ -27,10 +28,7 @@ indentify_dict = [
         "class": faraday_list.FaradayListSchema(),
     },
     {"obj": {"type": "ip"}, "class": faraday_ip.FaradayIPSchema()},
-    # {"obj": {"type": "list", "of": {"type": "boolean"}}, "class": List(Boolean())},
-    # {"obj": {"type": "or", "of": ({"type": "boolean"}, {"type": "string"})}, "class": Or(Boolean(), String())},
-    # {"obj": {"type": "list", "of": {"type": "or", "of": ({"type": "boolean"}, {"type": "string"})}},
-    # "class": List(Or(Boolean(), String()))},
+    {"obj": {"type": "float"}, "class": faraday_float.FaradayFloatSchema()},
 ]
 
 field_dict = [
@@ -42,12 +40,14 @@ field_dict = [
             "deser": {
                 "fields": [
                     {"data": {"data": 1}, "value": {"data": 1}},
+                    {"data": {"data": 1.5}, "value": {"data": 1}},
                     {"data": {"data": "1"}, "value": {"data": 1}},
                 ],
             },
             "ser": {
                 "fields": [
                     {"data": {"data": 1}, "value": {"data": 1}},
+                    {"data": {"data": 1.5}, "value": {"data": 1}},
                     {"data": {"data": "1"}, "value": {"data": 1}},
                 ],
             },
@@ -180,6 +180,28 @@ field_dict = [
             {"data": "test"},
             {"data": [192, 168, 0, 1]},
         ],
+    },
+    # Float
+    {
+        "obj": {"type": "float"},
+        "class": faraday_float.FaradayFloatSchema(),
+        "valid": {
+            "deser": {
+                "fields": [
+                    {"data": {"data": 1.5}, "value": {"data": 1.5}},
+                    {"data": {"data": "1.5"}, "value": {"data": 1.5}},
+                    {"data": {"data": "1"}, "value": {"data": 1.0}},
+                ],
+            },
+            "ser": {
+                "fields": [
+                    {"data": {"data": 1.5}, "value": {"data": 1.5}},
+                    {"data": {"data": "1.5"}, "value": {"data": 1.5}},
+                    {"data": {"data": "1"}, "value": {"data": 1.0}},
+                ],
+            },
+        },
+        "invalid": ["test", {"data": "text"}],
     },
 ]
 
