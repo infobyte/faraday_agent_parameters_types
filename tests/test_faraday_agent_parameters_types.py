@@ -4,6 +4,7 @@
 
 import pytest
 from faraday_agent_parameters_types.data_types import DATA_TYPE, BASE_TYPE, valid_base_types
+from faraday_agent_parameters_types.utils import deserialize_param, serialize_param
 
 from faraday_agent_parameters_types.custom_types import (
     faraday_integer,
@@ -38,20 +39,20 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": 1}, "value": 1},
-                    {"data": {"data": 1.5}, "value": 1},
-                    {"data": {"data": "1"}, "value": 1},
+                    {"data": 1, "value": 1},
+                    {"data": 1.5, "value": 1},
+                    {"data": "1", "value": 1},
                 ],
             },
             "ser": {
                 "fields": [
-                    {"data": {"data": 1}, "value": {"data": 1}},
-                    {"data": {"data": 1.5}, "value": {"data": 1}},
-                    {"data": {"data": "1"}, "value": {"data": 1}},
+                    {"data": 1, "value": 1},
+                    {"data": 1.5, "value": 1},
+                    {"data": "1", "value": 1},
                 ],
             },
         },
-        "invalid": ["test", {"data": "text"}],
+        "invalid": ["test", {"data": "text"}, ["test", "test2"]],
     },
     # STRING
     {
@@ -59,15 +60,13 @@ field_dict = [
         "class": faraday_string.FaradayStringSchema(),
         "valid": {
             "deser": {
-                "fields": [{"data": {"data": "text_string"}, "value": "text_string"}],
+                "fields": [{"data": "text_string", "value": "text_string"}],
             },
             "ser": {
-                "fields": [{"data": {"data": "text_string"}, "value": {"data": "text_string"}}],
+                "fields": [{"data": "text_string", "value": "text_string"}],
             },
         },
-        "invalid": [
-            "test",
-        ],
+        "invalid": ["test", {"Test": 2}, ["test"]],
     },
     # BOOL
     {
@@ -76,20 +75,26 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": True}, "value": True},
-                    {"data": {"data": "true"}, "value": True},
-                    {"data": {"data": 1}, "value": True},
+                    {"data": True, "value": True},
+                    {"data": "true", "value": True},
+                    {"data": 1, "value": True},
                 ],
             },
             "ser": {
                 "fields": [
-                    {"data": {"data": True}, "value": {"data": True}},
-                    {"data": {"data": "true"}, "value": {"data": True}},
-                    {"data": {"data": 1}, "value": {"data": True}},
+                    {"data": True, "value": True},
+                    {"data": "true", "value": True},
+                    {"data": 1, "value": True},
                 ],
             },
         },
-        "invalid": ["test", {"data": "test"}, {"data": 3}],
+        "invalid": [
+            "test",
+            {"data": "test"},
+            {"data": 3},
+            3,
+            ["3"],
+        ],
     },
     # LIST
     {
@@ -99,7 +104,7 @@ field_dict = [
             "deser": {
                 "fields": [
                     {
-                        "data": {"data": [1, "test_data"]},
+                        "data": [1, "test_data"],
                         "value": [1, "test_data"],
                     }
                 ],
@@ -107,13 +112,20 @@ field_dict = [
             "ser": {
                 "fields": [
                     {
-                        "data": {"data": [1, "test_data"]},
-                        "value": {"data": [1, "test_data"]},
+                        "data": [1, "test_data"],
+                        "value": [1, "test_data"],
                     }
                 ],
             },
         },
-        "invalid": ["test", {"data": 1}, {"data": "test"}, {"data": {"test": "test"}}],
+        "invalid": [
+            "test",
+            {"data": 1},
+            {"data": "test"},
+            {"data": {"test": "test"}},
+            1,
+            {"test": "test"},
+        ],
     },
     # RANGE
     {
@@ -122,12 +134,12 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": "1-4"}, "value": [1, 2, 3, 4]},
-                    {"data": {"data": [4, 5, 6, 7]}, "value": [4, 5, 6, 7]},
+                    {"data": "1-4", "value": [1, 2, 3, 4]},
+                    {"data": [4, 5, 6, 7], "value": [4, 5, 6, 7]},
                 ],
             },
             "ser": {
-                "fields": [{"data": {"data": [1, 2, 3, 4]}, "value": {"data": "1-4"}}],
+                "fields": [{"data": [1, 2, 3, 4], "value": "1-4"}],
             },
         },
         "invalid": [
@@ -137,6 +149,10 @@ field_dict = [
             {"data": 1},
             {"data": 1 - 4},
             {"data": [1, 2, "Test", 4]},
+            "6-4",
+            1,
+            1 - 4,
+            [1, 2, "Test", 4],
         ],
     },
     # IP
@@ -147,15 +163,15 @@ field_dict = [
             "deser": {
                 "fields": [
                     {
-                        "data": {"data": "192.168.0.1"},
+                        "data": "192.168.0.1",
                         "value": IPv4Address("192.168.0.1"),
                     },
                     {
-                        "data": {"data": "2001:db8:0:0:0:0:2:1"},
+                        "data": "2001:db8:0:0:0:0:2:1",
                         "value": IPv6Address("2001:db8:0:0:0:0:2:1"),
                     },
                     {
-                        "data": {"data": "2001:db8::2:1"},
+                        "data": "2001:db8::2:1",
                         "value": IPv6Address("2001:db8:0:0:0:0:2:1"),
                     },
                 ],
@@ -163,12 +179,12 @@ field_dict = [
             "ser": {
                 "fields": [
                     {
-                        "data": {"data": IPv4Address("192.168.0.1")},
-                        "value": {"data": "192.168.0.1"},
+                        "data": IPv4Address("192.168.0.1"),
+                        "value": "192.168.0.1",
                     },
                     {
-                        "data": {"data": IPv6Address("2001:db8:0:0:0:0:2:1")},
-                        "value": {"data": "2001:db8::2:1"},
+                        "data": IPv6Address("2001:db8:0:0:0:0:2:1"),
+                        "value": "2001:db8::2:1",
                     },
                 ],
             },
@@ -178,6 +194,8 @@ field_dict = [
             {"data": "192.168..1"},
             {"data": "test"},
             {"data": [192, 168, 0, 1]},
+            "192.168..1",
+            [192, 168, 0, 1],
         ],
     },
     # Float
@@ -187,16 +205,16 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": 1.5}, "value": 1.5},
-                    {"data": {"data": "1.5"}, "value": 1.5},
-                    {"data": {"data": "1"}, "value": 1.0},
+                    {"data": 1.5, "value": 1.5},
+                    {"data": "1.5", "value": 1.5},
+                    {"data": "1", "value": 1.0},
                 ],
             },
             "ser": {
                 "fields": [
-                    {"data": {"data": 1.5}, "value": {"data": 1.5}},
-                    {"data": {"data": "1.5"}, "value": {"data": 1.5}},
-                    {"data": {"data": "1"}, "value": {"data": 1.0}},
+                    {"data": 1.5, "value": 1.5},
+                    {"data": "1.5", "value": 1.5},
+                    {"data": "1", "value": 1.0},
                 ],
             },
         },
@@ -239,7 +257,7 @@ def test_deserialize(field):
     for entry in fields:
         value = entry["value"]
         data = entry["data"]
-        assert field["class"].load(data).data == value
+        assert deserialize_param(field["class"], data) == value
 
 
 @pytest.mark.parametrize("field", field_dict)
@@ -250,7 +268,7 @@ def test_serialize(field):
     for entry in fields:
         value = entry["value"]
         data = entry["data"]
-        assert field["class"].dump(data) == value
+        assert serialize_param(field["class"], data) == value
 
 
 @pytest.mark.parametrize("field", field_dict)
