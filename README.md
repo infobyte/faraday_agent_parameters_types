@@ -1,6 +1,6 @@
 # Faraday Agent Parameters Types
 
-The [faraday agents][dispatcher] run code remotely to ensure your domains. This info is triggered and published to a
+The [faraday agents][dispatcher] run code remotely to secure your domains. This info is triggered and published to a
 [faraday server][faraday] instance, which had set the parameters of the code. This repository sets the models to
 be used by both sides.
 

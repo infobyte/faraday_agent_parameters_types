@@ -1,7 +1,7 @@
 from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields, ValidationError
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 regex = re.compile(r"^(\d+)-(\d+)$")
 
@@ -46,8 +46,8 @@ class FaradayRangeField(fields.Field):
 
 @dataclass
 class FaradayRange:
-    data: str = str
-    class_name: str = "range"
+    data: list = field(default_factory=list)
+    class_name: str = field(default="range", init=False)
 
 
 class FaradayRangeSchema(TypeSchema):

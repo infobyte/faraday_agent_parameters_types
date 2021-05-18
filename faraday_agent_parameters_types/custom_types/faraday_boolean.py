@@ -1,12 +1,12 @@
 from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
 class FaradayBoolean:
-    data: bool = bool
-    class_name: str = "boolean"
+    data: bool = bool()
+    class_name: str = field(default="boolean", init=False)
 
 
 class FaradayBooleanSchema(TypeSchema):

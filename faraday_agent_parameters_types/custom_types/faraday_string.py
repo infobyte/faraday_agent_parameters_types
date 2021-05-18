@@ -1,12 +1,12 @@
 from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields, ValidationError, validates
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
 class FaradayString:
-    data: str = str
-    class_name: str = "string"
+    data: str = str()
+    class_name: str = field(default="string", init=False)
 
 
 class FaradayStringSchema(TypeSchema):
