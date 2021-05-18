@@ -1,20 +1,12 @@
-from ..faraday_agent_parameters_types import Type, TypeSchema
+from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields, ValidationError, validates
+from dataclasses import dataclass, field
 
-NAME_TYPE_CLASS = "list"
 
-
-class FaradayList(Type):
-    def __init__(self, data=[]):
-        """
-        Type: Lista
-        """
-        Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.data = data
-        self.value_dict = {"data": data}
-
-    def __str__(self):
-        return NAME_TYPE_CLASS
+@dataclass
+class FaradayList:
+    data: list = field(default_factory=list)
+    class_name: str = "list"
 
 
 class FaradayListSchema(TypeSchema):

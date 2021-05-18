@@ -1,20 +1,12 @@
-from ..faraday_agent_parameters_types import Type, TypeSchema
+from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields
+from dataclasses import dataclass
 
-NAME_TYPE_CLASS = "integer"
 
-
-class FaradayInteger(Type):
-    def __init__(self, data=0):
-        """
-        Type: Numero enero
-        """
-        Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.data = data
-        self.value_dict = {"data": data}
-
-    def __str__(self):
-        return NAME_TYPE_CLASS
+@dataclass
+class FaradayInteger:
+    data: int = int
+    class_name: str = "integer"
 
 
 class FaradayIntegerSchema(TypeSchema):

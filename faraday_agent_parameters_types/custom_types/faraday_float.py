@@ -1,20 +1,12 @@
-from ..faraday_agent_parameters_types import Type, TypeSchema
+from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields
+from dataclasses import dataclass
 
-NAME_TYPE_CLASS = "float"
 
-
-class FaradayFloat(Type):
-    def __init__(self, data=float):
-        """
-        Type: Float
-        """
-        Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.data = data
-        self.value_dict = {"data": data}
-
-    def __str__(self):
-        return NAME_TYPE_CLASS
+@dataclass
+class FaradayFloat:
+    data: float = float
+    class_name: str = "float"
 
 
 class FaradayFloatSchema(TypeSchema):

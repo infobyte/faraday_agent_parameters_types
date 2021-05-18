@@ -1,8 +1,8 @@
-from ..faraday_agent_parameters_types import Type, TypeSchema
+from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields, ValidationError
 import re
+from dataclasses import dataclass
 
-NAME_TYPE_CLASS = "range"
 regex = re.compile(r"^(\d+)-(\d+)$")
 
 
@@ -44,17 +44,10 @@ class FaradayRangeField(fields.Field):
         raise ValidationError("Invalid Data Type")
 
 
-class FaradayRange(Type):
-    def __init__(self, data=list):
-        """
-        Type: Range
-        """
-        Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.data = data
-        self.value_dict = {"data": data}
-
-    def __str__(self):
-        return NAME_TYPE_CLASS
+@dataclass
+class FaradayRange:
+    data: str = str
+    class_name: str = "range"
 
 
 class FaradayRangeSchema(TypeSchema):

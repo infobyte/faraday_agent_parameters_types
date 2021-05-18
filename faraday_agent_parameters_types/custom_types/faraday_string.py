@@ -1,17 +1,12 @@
-from ..faraday_agent_parameters_types import Type, TypeSchema
+from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields, ValidationError, validates
+from dataclasses import dataclass
 
-NAME_TYPE_CLASS = "string"
 
-
-class FaradayString(Type):
-    def __init__(self, data: str = ""):
-        """
-        Type: Faraday String.
-        """
-        Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.data = data
-        self.value_dict = {"data": data}
+@dataclass
+class FaradayString:
+    data: str = str
+    class_name: str = "string"
 
 
 class FaradayStringSchema(TypeSchema):

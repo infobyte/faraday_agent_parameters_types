@@ -3,7 +3,6 @@
 """Tests for `faraday_agent_parameters_types` package."""
 
 import pytest
-from tests.config.agent_manifests import indentify
 from faraday_agent_parameters_types.data_types import DATA_TYPE, BASE_TYPE, valid_base_types
 
 from faraday_agent_parameters_types.custom_types import (
@@ -39,9 +38,9 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": 1}, "value": {"data": 1}},
-                    {"data": {"data": 1.5}, "value": {"data": 1}},
-                    {"data": {"data": "1"}, "value": {"data": 1}},
+                    {"data": {"data": 1}, "value": 1},
+                    {"data": {"data": 1.5}, "value": 1},
+                    {"data": {"data": "1"}, "value": 1},
                 ],
             },
             "ser": {
@@ -60,7 +59,7 @@ field_dict = [
         "class": faraday_string.FaradayStringSchema(),
         "valid": {
             "deser": {
-                "fields": [{"data": {"data": "text_string"}, "value": {"data": "text_string"}}],
+                "fields": [{"data": {"data": "text_string"}, "value": "text_string"}],
             },
             "ser": {
                 "fields": [{"data": {"data": "text_string"}, "value": {"data": "text_string"}}],
@@ -77,9 +76,9 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": True}, "value": {"data": True}},
-                    {"data": {"data": "true"}, "value": {"data": True}},
-                    {"data": {"data": 1}, "value": {"data": True}},
+                    {"data": {"data": True}, "value": True},
+                    {"data": {"data": "true"}, "value": True},
+                    {"data": {"data": 1}, "value": True},
                 ],
             },
             "ser": {
@@ -101,7 +100,7 @@ field_dict = [
                 "fields": [
                     {
                         "data": {"data": [1, "test_data"]},
-                        "value": {"data": [1, "test_data"]},
+                        "value": [1, "test_data"],
                     }
                 ],
             },
@@ -123,8 +122,8 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": "1-4"}, "value": {"data": [1, 2, 3, 4]}},
-                    {"data": {"data": [4, 5, 6, 7]}, "value": {"data": [4, 5, 6, 7]}},
+                    {"data": {"data": "1-4"}, "value": [1, 2, 3, 4]},
+                    {"data": {"data": [4, 5, 6, 7]}, "value": [4, 5, 6, 7]},
                 ],
             },
             "ser": {
@@ -149,15 +148,15 @@ field_dict = [
                 "fields": [
                     {
                         "data": {"data": "192.168.0.1"},
-                        "value": {"data": IPv4Address("192.168.0.1")},
+                        "value": IPv4Address("192.168.0.1"),
                     },
                     {
                         "data": {"data": "2001:db8:0:0:0:0:2:1"},
-                        "value": {"data": IPv6Address("2001:db8:0:0:0:0:2:1")},
+                        "value": IPv6Address("2001:db8:0:0:0:0:2:1"),
                     },
                     {
                         "data": {"data": "2001:db8::2:1"},
-                        "value": {"data": IPv6Address("2001:db8:0:0:0:0:2:1")},
+                        "value": IPv6Address("2001:db8:0:0:0:0:2:1"),
                     },
                 ],
             },
@@ -188,9 +187,9 @@ field_dict = [
         "valid": {
             "deser": {
                 "fields": [
-                    {"data": {"data": 1.5}, "value": {"data": 1.5}},
-                    {"data": {"data": "1.5"}, "value": {"data": 1.5}},
-                    {"data": {"data": "1"}, "value": {"data": 1.0}},
+                    {"data": {"data": 1.5}, "value": 1.5},
+                    {"data": {"data": "1.5"}, "value": 1.5},
+                    {"data": {"data": "1"}, "value": 1.0},
                 ],
             },
             "ser": {
@@ -223,7 +222,7 @@ def test_base_type_valid():
 @pytest.mark.parametrize("case", indentify_dict)
 def test_indentify_type(case):
     # In base of obj, it should recognize the class
-    assert isinstance(case["class"], indentify(case["obj"]))
+    assert isinstance(case["class"], type(DATA_TYPE[case["obj"]["type"]]))
 
 
 @pytest.mark.parametrize("case", indentify_dict)
@@ -240,7 +239,7 @@ def test_deserialize(field):
     for entry in fields:
         value = entry["value"]
         data = entry["data"]
-        assert field["class"].load(data).value_dict == value
+        assert field["class"].load(data).data == value
 
 
 @pytest.mark.parametrize("field", field_dict)
