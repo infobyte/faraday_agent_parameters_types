@@ -11,14 +11,16 @@ def get_schema(p_type: Union[str, Schema]):
     return DATA_TYPE[p_type]
 
 
-def type_validate(p_type: str, data):
+def type_validate(p_type: Union[str, Schema], data):
     errors = get_schema(p_type).validate({"data": data})
     return errors
 
 
-def deserialize_param(p_type: str, data):
-    return get_schema(p_type).load({"data": data}).data
+def deserialize_param(p_type: Union[str, Schema], data, get_obj=False):
+    obj = get_schema(p_type).load({"data": data})
+    return obj if get_obj else obj.data
 
 
-def serialize_param(p_type: str, data):
-    return get_schema(p_type).dump({"data": data}).get("data")
+def serialize_param(p_type: Union[str, Schema], data, get_dict=False):
+    r_dict = get_schema(p_type).dump({"data": data})
+    return r_dict if get_dict else r_dict.get("data")
