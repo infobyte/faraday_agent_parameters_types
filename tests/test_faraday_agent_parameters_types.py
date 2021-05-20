@@ -14,6 +14,7 @@ from faraday_agent_parameters_types.custom_types import (
     faraday_int_range,
     faraday_ip,
     faraday_float,
+    faraday_url,
 )
 
 from ipaddress import IPv4Address, IPv6Address
@@ -219,6 +220,34 @@ field_dict = [
             },
         },
         "invalid": ["test", {"data": "text"}],
+    },
+    # URL
+    {
+        "obj": {"type": "url"},
+        "class": faraday_url.FaradayUrlSchema(),
+        "valid": {
+            "deser": {
+                "fields": [
+                    {"data": "http://test.com", "value": "http://test.com"},
+                    {"data": "ftp://test.com.ar", "value": "ftp://test.com.ar"},
+                    {"data": "https://mail.test.eu/test.php", "value": "https://mail.test.eu/test.php"},
+                ],
+            },
+            "ser": {
+                "fields": [
+                    {"data": "http://test.com", "value": "http://test.com"},
+                    {"data": "ftp://test.com.ar", "value": "ftp://test.com.ar"},
+                    {"data": "https://mail.test.eu/test.php", "value": "https://mail.test.eu/test.php"},
+                ],
+            },
+        },
+        "invalid": [
+            "www.google.com",
+            "google.com",
+            "localhost",
+            "192.168.0.1",
+            "test://www.google.com",
+        ],
     },
 ]
 
