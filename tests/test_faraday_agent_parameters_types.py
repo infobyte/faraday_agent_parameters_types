@@ -4,7 +4,7 @@
 
 import pytest
 from faraday_agent_parameters_types.data_types import DATA_TYPE, BASE_TYPE, valid_base_types
-from faraday_agent_parameters_types.utils import deserialize_param, serialize_param
+from faraday_agent_parameters_types.utils import deserialize_param, serialize_param, type_validate
 
 from faraday_agent_parameters_types.custom_types import (
     faraday_integer,
@@ -66,7 +66,7 @@ field_dict = [
                 "fields": [{"data": "text_string", "value": "text_string"}],
             },
         },
-        "invalid": ["test", {"Test": 2}, ["test"]],
+        "invalid": [{"Test": 2}, ["test"]],
     },
     # BOOL
     {
@@ -277,4 +277,19 @@ def test_invalid_data(field):
     if field["obj"]["type"] == "list":
         field["class"]._composed_list = field["obj"]["composed"]
     for entry in fields:
-        assert field["class"].validate(entry)
+        assert type_validate(field["class"], entry)
+
+
+def test_OR_valid():
+    # Range is the only valid type here
+    _type = ["integer", "ip", "range", "float"]
+    _data = "2-7"
+    _expected = [2, 3, 4, 5, 6, 7]
+    assert deserialize_param(_type, _data) == _expected
+
+
+def test_OR_invalid():
+    _type = ["integer", "ip", "range", "float"]
+    _data = ["test"]
+    errors = type_validate(_type, _data)
+    assert errors
