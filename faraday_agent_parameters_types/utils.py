@@ -1,7 +1,11 @@
+import json
 from faraday_agent_parameters_types.data_types import DATA_TYPE
 from typing import Union, List, Any
 from marshmallow import ValidationError
 from faraday_agent_parameters_types.faraday_agent_parameters_types import TypeSchema
+from pathlib import Path
+
+manifests_folder = Path(__file__).parent / "static/executors/official"
 
 
 def get_schema(p_type: Union[str, TypeSchema]) -> TypeSchema:
@@ -53,3 +57,12 @@ def serialize_param(p_type: Union[str, TypeSchema, List[Union[str, TypeSchema]]]
             raise ValidationError("Could not validate with any of the possible types")
     r_dict = get_schema(v_type).dump({"data": data})
     return r_dict if get_dict else r_dict.get("data")
+
+
+def get_manifests() -> dict:
+    manifests_dict = {}
+    for path in manifests_folder.iterdir():
+        if path.is_file():
+            with open(path) as file:
+                manifests_dict[path.stem] = json.load(file)
+    return manifests_dict
