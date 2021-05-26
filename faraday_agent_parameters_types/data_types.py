@@ -5,6 +5,8 @@ from faraday_agent_parameters_types.custom_types import (
     faraday_list,
     faraday_int_range,
     faraday_ip,
+    faraday_float,
+    faraday_url,
 )
 
 DATA_TYPE = {
@@ -14,8 +16,19 @@ DATA_TYPE = {
     "list": faraday_list.FaradayListSchema(),
     "range": faraday_int_range.FaradayRangeSchema(),
     "ip": faraday_ip.FaradayIPSchema(),
+    "float": faraday_float.FaradayFloatSchema(),
+    "url": faraday_url.FaradayUrlSchema(),
 }
 
+valid_base_types = (
+    "integer",
+    "string",
+    "boolean",
+    "list",
+    "decimal",
+)
+
+# Lookup table to match a data type to a base type
 BASE_TYPE = {
     "integer": "integer",
     "string": "string",
@@ -23,4 +36,6 @@ BASE_TYPE = {
     "list": "list",
     "range": "string",
     "ip": "string",
+    "float": "decimal",
+    "url": "string",
 }

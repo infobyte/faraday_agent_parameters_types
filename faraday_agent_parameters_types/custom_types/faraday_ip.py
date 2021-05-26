@@ -1,20 +1,14 @@
-from ..faraday_agent_parameters_types import Type, TypeSchema
+from typing import Union
+from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields
+from dataclasses import dataclass, field
+from ipaddress import IPv4Address, IPv6Address
 
-NAME_TYPE_CLASS = "ip"
 
-
-class FaradayIP(Type):
-    def __init__(self, data=""):
-        """
-        Type: ip
-        """
-        Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.data = data
-        self.value_dict = {"data": data}
-
-    def __str__(self):
-        return NAME_TYPE_CLASS
+@dataclass
+class FaradayIP:
+    data: Union[IPv4Address, IPv6Address] = IPv4Address("127.0.0.1")
+    class_name: str = field(default="ip", init=False)
 
 
 class FaradayIPSchema(TypeSchema):

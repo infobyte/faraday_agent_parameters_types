@@ -1,18 +1,12 @@
-from ..faraday_agent_parameters_types import Type, TypeSchema
+from ..faraday_agent_parameters_types import TypeSchema
 from marshmallow import fields
+from dataclasses import dataclass, field
 
 
-NAME_TYPE_CLASS = "boolean"
-
-
-class FaradayBoolean(Type):
-    def __init__(self, data: bool = True):
-        """
-        Type: Faraday Boolean.
-        """
-        Type.__init__(self, class_name=NAME_TYPE_CLASS)
-        self.data = data
-        self.value_dict = {"data": data}
+@dataclass
+class FaradayBoolean:
+    data: bool = bool()
+    class_name: str = field(default="boolean", init=False)
 
 
 class FaradayBooleanSchema(TypeSchema):
