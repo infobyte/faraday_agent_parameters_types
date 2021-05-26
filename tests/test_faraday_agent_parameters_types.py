@@ -3,6 +3,8 @@
 """Tests for `faraday_agent_parameters_types` package."""
 
 import pytest
+from marshmallow import ValidationError, Schema
+
 from faraday_agent_parameters_types.data_types import DATA_TYPE, BASE_TYPE, valid_base_types
 from faraday_agent_parameters_types.utils import deserialize_param, serialize_param, type_validate
 
@@ -322,3 +324,9 @@ def test_OR_invalid():
     _data = ["test"]
     errors = type_validate(_type, _data)
     assert errors
+
+
+@pytest.mark.parametrize("_type", ["test", "ipp", Schema()])
+def test_invalid_data_type(_type):
+    with pytest.raises(ValidationError, match="Invalid Data Type"):
+        type_validate(_type, "test")
