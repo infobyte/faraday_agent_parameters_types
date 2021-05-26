@@ -26,7 +26,6 @@ valid_base_types = (
     "boolean",
     "list",
     "decimal",
-    "or",
 )
 
 # Lookup table to match a data type to a base type
