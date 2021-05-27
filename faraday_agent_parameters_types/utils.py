@@ -5,7 +5,7 @@ from marshmallow import ValidationError
 from faraday_agent_parameters_types.faraday_agent_parameters_types import TypeSchema
 from pathlib import Path
 
-manifests_folder = Path(__file__).parent / "static/executors/official"
+manifests_folder = Path(__file__).parent / "static" / "manifests"
 
 
 def get_schema(p_type: Union[str, TypeSchema]) -> TypeSchema:
@@ -63,6 +63,6 @@ def get_manifests() -> dict:
     manifests_dict = {}
     for path in manifests_folder.iterdir():
         if path.is_file():
-            with open(path) as file:
+            with path.open() as file:
                 manifests_dict[path.stem] = json.load(file)
     return manifests_dict

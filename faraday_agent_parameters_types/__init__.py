@@ -2,7 +2,7 @@
 
 __author__ = """Faraday Development Team"""
 __email__ = "devel@infobytesec.com"
-__version__ = "0.1.8"
+__version__ = "0.1.9"
 
 from pathlib import Path
 from typing import Union
@@ -10,4 +10,4 @@ from typing import Union
 
 def manifests_folder() -> Union[Path, str]:
 
-    return Path(__file__).parent / "static" / "executors" / "official"
+    return Path(__file__).parent / "static" / "manifests"
