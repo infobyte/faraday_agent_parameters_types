@@ -1,17 +1,23 @@
 {
-  "arguments": {
-    "OPENVAS_USER": {"mandatory": true, "type": "string", "base": "string"},
-    "OPENVAS_PASSW": {"mandatory": true, "type": "string", "base": "string"},
-    "OPENVAS_HOST": {"mandatory": true, "type": "ip", "base": "string"},
-    "OPENVAS_PORT": {"mandatory": true, "type": "integer", "base": "string"},
-    "OPENVAS_SCAN_URL": {"mandatory": true, "type": "string", "base": "string"},
-    "OPENVAS_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
+    "arguments": {
+        "OPENVAS_USER": {"mandatory": true, "type": "string", "base": "string"},
+        "OPENVAS_PASSW": {"mandatory": true, "type": "string", "base": "string"},
+        "OPENVAS_HOST": {"mandatory": true, "type": "ip", "base": "string"},
+        "OPENVAS_PORT": {"mandatory": true, "type": "integer", "base": "string"},
+        "OPENVAS_SCAN_URL": {"mandatory": true, "type": "string", "base": "string"},
+        "OPENVAS_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
 
-  ],
-  "check_cmds": [
-    "omp --help"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    ],
+    "check_cmds": [
+        "omp --help"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Network and Vulnerability Scanners",
+    "name": "openvaslegacy",
+    "title": "Openvas (Legacy)",
+    "website": "https://www.openvas.org/",
+    "description": "Vulnerability Scanner",
+    "image": null
 }

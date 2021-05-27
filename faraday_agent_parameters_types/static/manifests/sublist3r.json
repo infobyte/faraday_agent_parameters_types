@@ -1,13 +1,19 @@
 {
-  "arguments": {
-    "DOMAIN": {"mandatory": true, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
+    "arguments": {
+        "DOMAIN": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
 
-  ],
-  "check_cmds": [
-    "jq --version",
-    "getent --version"
-  ],
-  "cmd": "bash {EXECUTOR_FILE_PATH}"
+    ],
+    "check_cmds": [
+        "jq --version",
+        "getent --version"
+    ],
+    "cmd": "bash {EXECUTOR_FILE_PATH}",
+    "category": "Network Tools",
+    "name": "sublist3r",
+    "title": "Sublist3r",
+    "website": "https://github.com/aboul3la/Sublist3r",
+    "description": "Enumerates Subdomains",
+    "image": null
 }

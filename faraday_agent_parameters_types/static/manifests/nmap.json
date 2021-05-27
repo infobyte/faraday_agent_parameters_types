@@ -1,19 +1,25 @@
 {
-  "arguments": {
-    "TARGET": {"mandatory": true, "type": "ip", "base": "string"},
-    "PORT_LIST": {"mandatory": false, "type": "range", "base": "string"},
-    "OPTION_SC": {"mandatory": false, "type": "boolean", "base": "boolean"},
-    "OPTION_SV": {"mandatory": false, "type": "boolean", "base": "boolean"},
-    "OPTION_PN": {"mandatory": false, "type": "boolean", "base": "boolean"},
-    "SCRIPT_TIMEOUT": {"mandatory": false, "type": "integer", "base": "integer"},
-    "HOST_TIMEOUT": {"mandatory": false, "type": "integer", "base": "integer"},
-    "TOP_PORTS": {"mandatory": false, "type": "list", "base": "list"}
-  },
-  "environment_variables": [
+    "arguments": {
+        "TARGET": {"mandatory": true, "type": "ip", "base": "string"},
+        "PORT_LIST": {"mandatory": false, "type": "range", "base": "string"},
+        "OPTION_SC": {"mandatory": false, "type": "boolean", "base": "boolean"},
+        "OPTION_SV": {"mandatory": false, "type": "boolean", "base": "boolean"},
+        "OPTION_PN": {"mandatory": false, "type": "boolean", "base": "boolean"},
+        "SCRIPT_TIMEOUT": {"mandatory": false, "type": "integer", "base": "integer"},
+        "HOST_TIMEOUT": {"mandatory": false, "type": "integer", "base": "integer"},
+        "TOP_PORTS": {"mandatory": false, "type": "list", "base": "list"}
+    },
+    "environment_variables": [
 
-  ],
-  "check_cmds": [
-    "nmap --version"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    ],
+    "check_cmds": [
+        "nmap --version"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Network and Vulnerability Scanners",
+    "name": "nmap",
+    "title": "Nmap",
+    "website": "https://nmap.org/",
+    "description": "Open Source Network Scanner",
+    "image": null
 }
