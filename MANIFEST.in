@@ -10,4 +10,4 @@ recursive-exclude * *.py[co]
 
 recursive-include docs *.rst conf.py Makefile make.bat *.jpg *.png *.gif
 
-graft faraday_agent_parameters_types/static/executors/official
+graft faraday_agent_parameters_types/static/manifests
