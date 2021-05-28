@@ -1,13 +1,19 @@
 {
-  "arguments": {
-    "API_HOST": {"mandatory": true, "type": "string", "base": "string"},
-    "API_KEY": {"mandatory": true, "type": "string", "base": "string"},
-    "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
-    "NAMED_CONFIGURATION": {"mandatory": false, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
-  ],
-  "check_cmds": [
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    "arguments": {
+        "API_HOST": {"mandatory": true, "type": "string", "base": "string"},
+        "API_KEY": {"mandatory": true, "type": "string", "base": "string"},
+        "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
+        "NAMED_CONFIGURATION": {"mandatory": false, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+    ],
+    "check_cmds": [
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "burp",
+    "title": "Burp Scanner",
+    "website": "https://portswigger.net/burp/vulnerability-scanner",
+    "description": "Web App Scanner",
+    "image": null
 }

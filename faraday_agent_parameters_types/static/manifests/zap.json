@@ -1,12 +1,18 @@
 {
-  "arguments": {
-    "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
-    "API_KEY": {"mandatory": true, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
-  ],
-  "check_cmds": [
+    "arguments": {
+        "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
+        "API_KEY": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+    ],
+    "check_cmds": [
 
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "zap",
+    "title": "OWASP ZAP",
+    "website": "https://www.zaproxy.org/",
+    "description": "Web App Scanner",
+    "image": null
 }

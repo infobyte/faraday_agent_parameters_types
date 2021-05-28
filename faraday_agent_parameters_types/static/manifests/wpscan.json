@@ -1,12 +1,18 @@
 {
-  "arguments": {
-    "WPSCAN_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
+    "arguments": {
+        "WPSCAN_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
 
-  ],
-  "check_cmds": [
-    "wpscan --version"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    ],
+    "check_cmds": [
+        "wpscan --version"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "wpscan",
+    "title": "Wpscan",
+    "website": "https://wpscan.com/wordpress-security-scanner",
+    "description": "WordPress Security Scanner",
+    "image": null
 }

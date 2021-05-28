@@ -1,13 +1,19 @@
 {
-  "arguments": {
-    "NUCLEI_TARGET": {"mandatory": true, "type": "string", "base": "string"},
-    "NUCLEI_EXCLUDE": {"mandatory": false, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
-    "NUCLEI_TEMPLATES"
-  ],
-  "check_cmds": [
-    "nuclei --version"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    "arguments": {
+        "NUCLEI_TARGET": {"mandatory": true, "type": "string", "base": "string"},
+        "NUCLEI_EXCLUDE": {"mandatory": false, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+        "NUCLEI_TEMPLATES"
+    ],
+    "check_cmds": [
+        "nuclei --version"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Network and Vulnerability Scanners",
+    "name": "nuclei",
+    "title": "Nuclei",
+    "website": "https://nuclei.projectdiscovery.io/",
+    "description": "Vulnerability Scanner",
+    "image": null
 }

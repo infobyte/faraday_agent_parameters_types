@@ -1,13 +1,19 @@
 {
-  "arguments": {
-    "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
-    "TARGET_PORT": {"mandatory": false, "type": "integer", "base": "integer"}
-  },
-  "environment_variables": [
+    "arguments": {
+        "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
+        "TARGET_PORT": {"mandatory": false, "type": "integer", "base": "integer"}
+    },
+    "environment_variables": [
 
-  ],
-  "check_cmds": [
-    "nikto -Version"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    ],
+    "check_cmds": [
+        "nikto -Version"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "nikto",
+    "title": "Nikto",
+    "website": null,
+    "description": "Web Server Scanner",
+    "image": null
 }

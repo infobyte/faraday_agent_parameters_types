@@ -1,12 +1,18 @@
 {
-  "arguments": {
-    "W3AF_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
-    "W3AF_PATH"
-  ],
-  "check_cmds": [
-    "python2 --version"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    "arguments": {
+        "W3AF_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+        "W3AF_PATH"
+    ],
+    "check_cmds": [
+        "python2 --version"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "w3af",
+    "title": "w3af",
+    "website": "https://w3af.org/",
+    "description": "Web App Security Scanner",
+    "image": null
 }

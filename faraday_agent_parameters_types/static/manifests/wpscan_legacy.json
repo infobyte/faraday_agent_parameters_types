@@ -1,13 +1,19 @@
 {
-  "arguments": {
-    "WPSCAN_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
+    "arguments": {
+        "WPSCAN_TARGET_URL": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
 
-  ],
-  "check_cmds": [
-    "docker -v",
-    "docker images -q wpscanteam/wpscan"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    ],
+    "check_cmds": [
+        "docker -v",
+        "docker images -q wpscanteam/wpscan"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "wpscanlegacy",
+    "title": "Wpscan (Legacy)",
+    "website": "https://wpscan.com/wordpress-security-scanner",
+    "description": "WordPress Security Scanner",
+    "image": null
 }

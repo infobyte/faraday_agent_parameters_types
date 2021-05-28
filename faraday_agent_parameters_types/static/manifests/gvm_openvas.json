@@ -1,25 +1,31 @@
 {
-  "arguments": {
-    "SCAN_TARGET": {"mandatory": true, "type": "string", "base": "string"},
-    "PORT_LIST_ID": {"mandatory": false, "type": "string", "base": "string"},
-    "SCAN_ID": {"mandatory": false, "type": "string", "base": "string"},
-    "CONNECTION_TYPE": {"mandatory": true, "type": "string", "base": "string"},
-    "SOCKET_PATH": {"mandatory": false, "type": "string", "base": "string"},
-    "SSH_USER": {"mandatory": false, "type": "string", "base": "string"},
-    "SSH_PASSW": {"mandatory": false, "type": "string", "base": "string"},
-    "TLS_CERTFILE_PATH": {"mandatory": false, "type": "string", "base": "string"},
-    "TLS_CAFILE_PATH": {"mandatory": false, "type": "string", "base": "string"},
-    "TLS_KEYFILE_PATH": {"mandatory": false, "type": "string", "base": "string"},
-    "TLS_PKEY_PASSW": {"mandatory": false, "type": "string", "base": "string"}
-  },
-  "environment_variables": [
-    "GVM_USER",
-    "GVM_PASSW",
-    "HOST",
-    "PORT"
-  ],
-  "check_cmds": [
-    "python3 -m pip show python-gvm"
-  ],
-  "cmd": "python3 {EXECUTOR_FILE_PATH}"
+    "arguments": {
+        "SCAN_TARGET": {"mandatory": true, "type": "string", "base": "string"},
+        "PORT_LIST_ID": {"mandatory": false, "type": "string", "base": "string"},
+        "SCAN_ID": {"mandatory": false, "type": "string", "base": "string"},
+        "CONNECTION_TYPE": {"mandatory": true, "type": "string", "base": "string"},
+        "SOCKET_PATH": {"mandatory": false, "type": "string", "base": "string"},
+        "SSH_USER": {"mandatory": false, "type": "string", "base": "string"},
+        "SSH_PASSW": {"mandatory": false, "type": "string", "base": "string"},
+        "TLS_CERTFILE_PATH": {"mandatory": false, "type": "string", "base": "string"},
+        "TLS_CAFILE_PATH": {"mandatory": false, "type": "string", "base": "string"},
+        "TLS_KEYFILE_PATH": {"mandatory": false, "type": "string", "base": "string"},
+        "TLS_PKEY_PASSW": {"mandatory": false, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+        "GVM_USER",
+        "GVM_PASSW",
+        "HOST",
+        "PORT"
+    ],
+    "check_cmds": [
+        "python3 -m pip show python-gvm"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Network and Vulnerability Scanners",
+    "name": "openvas",
+    "title": "Openvas",
+    "website": "https://www.openvas.org/",
+    "description": "Vulnerability Scanner",
+    "image": null
 }
