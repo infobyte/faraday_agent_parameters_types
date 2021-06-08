@@ -12,4 +12,4 @@ class FaradayFloat:
 
 class FaradayFloatSchema(TypeSchema):
     data = fields.Float()
-    _type = FaradayFloat
+    type = FaradayFloat

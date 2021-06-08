@@ -12,4 +12,4 @@ class FaradayBoolean:
 
 class FaradayBooleanSchema(TypeSchema):
     data = fields.Boolean()
-    _type = FaradayBoolean
+    type = FaradayBoolean

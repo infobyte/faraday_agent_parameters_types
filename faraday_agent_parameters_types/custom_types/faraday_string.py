@@ -12,7 +12,7 @@ class FaradayString:
 
 class FaradayStringSchema(TypeSchema):
     data = fields.String()
-    _type = FaradayString
+    type = FaradayString
 
     @validates("data")
     def validate_length_characters(self, text):

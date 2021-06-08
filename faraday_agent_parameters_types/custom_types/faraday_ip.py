@@ -14,4 +14,4 @@ class FaradayIP:
 
 class FaradayIPSchema(TypeSchema):
     data = fields.IP()
-    _type = FaradayIP
+    type = FaradayIP

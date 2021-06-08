@@ -12,4 +12,4 @@ class FaradayUrl:
 
 class FaradayUrlSchema(TypeSchema):
     data = fields.Url()
-    _type = FaradayUrl
+    type = FaradayUrl

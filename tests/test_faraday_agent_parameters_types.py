@@ -312,7 +312,7 @@ def test_OR_invalid():
     assert errors
 
 
-@pytest.mark.parametrize("_type", ["test", "ipp", Schema()])
-def test_invalid_data_type(_type):
+@pytest.mark.parametrize("type", ["test", "ipp", Schema()])
+def test_invalid_data_type(type):
     with pytest.raises(ValidationError, match="Invalid Data Type"):
-        type_validate(_type, "test")
+        type_validate(type, "test")

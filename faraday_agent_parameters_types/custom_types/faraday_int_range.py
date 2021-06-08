@@ -53,4 +53,4 @@ class FaradayRange:
 
 class FaradayRangeSchema(TypeSchema):
     data = FaradayRangeField()
-    _type = FaradayRange
+    type = FaradayRange

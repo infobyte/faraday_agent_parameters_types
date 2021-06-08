@@ -12,4 +12,4 @@ class FaradayInteger:
 
 class FaradayIntegerSchema(TypeSchema):
     data = fields.Integer()
-    _type = FaradayInteger
+    type = FaradayInteger

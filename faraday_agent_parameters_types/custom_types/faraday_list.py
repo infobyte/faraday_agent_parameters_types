@@ -12,7 +12,7 @@ class FaradayList:
 
 class FaradayListSchema(TypeSchema):
     data = fields.List(fields.Raw())
-    _type = FaradayList
+    type = FaradayList
     _composed_list = []
 
     @validates("data")
