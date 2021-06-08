@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 class FaradayInteger:
     data: int = int()
     class_name: str = field(default="integer", init=False)
+    base: str = field(default="integer", init=False)
 
 
 class FaradayIntegerSchema(TypeSchema):

@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 class FaradayUrl:
     data: str = str()
     class_name: str = field(default="url", init=False)
+    base: str = field(default="string", init=False)
 
 
 class FaradayUrlSchema(TypeSchema):

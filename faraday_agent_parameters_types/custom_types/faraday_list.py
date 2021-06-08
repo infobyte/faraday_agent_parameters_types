@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 class FaradayList:
     data: list = field(default_factory=list)
     class_name: str = field(default="list", init=False)
+    base: str = field(default="list", init=False)
 
 
 class FaradayListSchema(TypeSchema):

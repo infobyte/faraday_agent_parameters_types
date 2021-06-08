@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 class FaradayBoolean:
     data: bool = bool()
     class_name: str = field(default="boolean", init=False)
+    base: str = field(default="boolean", init=False)
 
 
 class FaradayBooleanSchema(TypeSchema):

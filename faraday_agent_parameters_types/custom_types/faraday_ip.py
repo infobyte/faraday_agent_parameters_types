@@ -9,6 +9,7 @@ from ipaddress import IPv4Address, IPv6Address
 class FaradayIP:
     data: Union[IPv4Address, IPv6Address] = IPv4Address("127.0.0.1")
     class_name: str = field(default="ip", init=False)
+    base: str = field(default="string", init=False)
 
 
 class FaradayIPSchema(TypeSchema):

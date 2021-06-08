@@ -19,23 +19,3 @@ DATA_TYPE = {
     "float": faraday_float.FaradayFloatSchema(),
     "url": faraday_url.FaradayUrlSchema(),
 }
-
-valid_base_types = (
-    "integer",
-    "string",
-    "boolean",
-    "list",
-    "decimal",
-)
-
-# Lookup table to match a data type to a base type
-BASE_TYPE = {
-    "integer": "integer",
-    "string": "string",
-    "boolean": "boolean",
-    "list": "list",
-    "range": "string",
-    "ip": "string",
-    "float": "decimal",
-    "url": "string",
-}

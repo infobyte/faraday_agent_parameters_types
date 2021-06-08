@@ -48,6 +48,7 @@ class FaradayRangeField(fields.Field):
 class FaradayRange:
     data: list = field(default_factory=list)
     class_name: str = field(default="range", init=False)
+    base: str = field(default="string", init=False)
 
 
 class FaradayRangeSchema(TypeSchema):

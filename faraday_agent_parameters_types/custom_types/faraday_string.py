@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 class FaradayString:
     data: str = str()
     class_name: str = field(default="string", init=False)
+    base: str = field(default="string", init=False)
 
 
 class FaradayStringSchema(TypeSchema):
