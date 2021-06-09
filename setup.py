@@ -37,7 +37,7 @@ extra_req = {
 setup(
     author="Faraday Development Team",
     author_email="devel@infobytesec.com",
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
