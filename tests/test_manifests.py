@@ -24,6 +24,4 @@ def test_manifests_valid():
         assert all(field in manifest for field in needed_manifest_fields)
         # Check if none
         for key, value in manifest.items():
-            if key in nullable_fields:
-                continue
-            assert value is not None
+            assert key in nullable_fields or value is not None
