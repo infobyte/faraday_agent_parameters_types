@@ -68,21 +68,13 @@ def get_manifests(version_requested: str = None) -> dict:
                 all_manifests_dict[manifest_name] = {}
             with path.open() as file:
                 loaded_json = json.load(file)
-                all_manifests_dict[manifest_name][loaded_json["manifest_version"]] = loaded_json
+                parsed_ver = parse(loaded_json["manifest_version"])
+                if version_requested and parsed_ver > parse(version_requested):
+                    continue
+                all_manifests_dict[manifest_name][parsed_ver] = loaded_json
 
-    # GET LASTEST VERSION
     manifests_dict = {}
     for tool_name, tool in all_manifests_dict.items():
-        parsed_versions = {}
-        for version, data in tool.items():
-            parsed_version = parse(version)
-            if version_requested and parsed_version > parse(version_requested):
-                continue
-            parsed_versions[parsed_version] = data
-
-        if not parsed_versions:
-            continue
-        version_to_use = max(parsed_versions)
-        manifests_dict[tool_name] = parsed_versions[version_to_use]
+        manifests_dict[tool_name] = tool[max(tool.keys())]
 
     return manifests_dict
