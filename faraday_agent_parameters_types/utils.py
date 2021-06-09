@@ -4,6 +4,8 @@ from typing import Union, List, Any
 from marshmallow import ValidationError
 from faraday_agent_parameters_types.faraday_agent_parameters_types import TypeSchema
 from pathlib import Path
+from packaging.version import parse
+import re
 
 manifests_folder = Path(__file__).parent / "static" / "manifests"
 
@@ -57,10 +59,30 @@ def serialize_param(type_schema: Union[str, TypeSchema, List[Union[str, TypeSche
     return r_dict if get_dict else r_dict.get("data")
 
 
-def get_manifests() -> dict:
-    manifests_dict = {}
+def get_manifests(version_requested: str = None) -> dict:
+    all_manifests_dict = {}
     for path in manifests_folder.iterdir():
         if path.is_file():
+            manifest_name = re.search(r"^(.+)-.+$", path.stem).group(1)
+            if manifest_name not in all_manifests_dict:
+                all_manifests_dict[manifest_name] = {}
             with path.open() as file:
-                manifests_dict[path.stem] = json.load(file)
+                loaded_json = json.load(file)
+                all_manifests_dict[manifest_name][loaded_json["manifest_version"]] = loaded_json
+
+    # GET LASTEST VERSION
+    manifests_dict = {}
+    for tool_name, tool in all_manifests_dict.items():
+        parsed_versions = {}
+        for version, data in tool.items():
+            parsed_version = parse(version)
+            if version_requested and parsed_version > parse(version_requested):
+                continue
+            parsed_versions[parsed_version] = data
+
+        if not parsed_versions:
+            continue
+        version_to_use = max(parsed_versions)
+        manifests_dict[tool_name] = parsed_versions[version_to_use]
+
     return manifests_dict

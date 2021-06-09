@@ -11,6 +11,7 @@ needed_manifest_fields = (
     "website",
     "description",
     "image",
+    "manifest_version",
 )
 
 nullable_fields = ("website", "image")

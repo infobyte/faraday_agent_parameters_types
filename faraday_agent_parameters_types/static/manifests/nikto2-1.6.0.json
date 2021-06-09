@@ -15,5 +15,6 @@
     "title": "Nikto",
     "website": null,
     "description": "Web Server Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

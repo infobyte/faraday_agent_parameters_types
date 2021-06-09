@@ -14,5 +14,6 @@
     "title": "w3af",
     "website": "https://w3af.org/",
     "description": "Web App Security Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

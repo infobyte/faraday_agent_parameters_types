@@ -14,5 +14,6 @@
     "title": "Arachni",
     "website": "https://www.arachni-scanner.com/",
     "description": "Web App Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }
