@@ -16,6 +16,7 @@ with open("CHANGELOG.md") as history_file:
 
 requirements = [
     "marshmallow>=3.11.0",
+    "packaging",
 ]
 
 setup_requirements = [

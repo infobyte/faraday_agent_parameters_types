@@ -15,5 +15,6 @@
     "title": "Burp Scanner",
     "website": "https://portswigger.net/burp/vulnerability-scanner",
     "description": "Web App Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

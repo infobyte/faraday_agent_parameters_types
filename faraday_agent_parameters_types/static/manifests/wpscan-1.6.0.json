@@ -6,14 +6,14 @@
 
     ],
     "check_cmds": [
-        "docker -v",
-        "docker images -q wpscanteam/wpscan"
+        "wpscan --version"
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Web App Scanners",
-    "name": "wpscanlegacy",
-    "title": "Wpscan (Legacy)",
+    "name": "wpscan",
+    "title": "Wpscan",
     "website": "https://wpscan.com/wordpress-security-scanner",
     "description": "WordPress Security Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

@@ -15,5 +15,6 @@
     "title": "Report Processor",
     "website": "https://faradaysec.com/",
     "description": "Report Uploading Tool",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

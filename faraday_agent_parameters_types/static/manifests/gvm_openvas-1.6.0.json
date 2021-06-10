@@ -27,5 +27,6 @@
     "title": "Openvas",
     "website": "https://www.openvas.org/",
     "description": "Vulnerability Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

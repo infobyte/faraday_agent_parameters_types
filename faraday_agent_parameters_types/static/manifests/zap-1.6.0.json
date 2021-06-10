@@ -14,5 +14,6 @@
     "title": "OWASP ZAP",
     "website": "https://www.zaproxy.org/",
     "description": "Web App Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

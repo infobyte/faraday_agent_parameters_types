@@ -1,0 +1,19 @@
+{
+    "arguments": {
+        "NAME_URL": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+        "ARACHNI_PATH"
+    ],
+    "check_cmds": [
+
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "test2",
+    "title": "Arachni",
+    "website": "https://www.arachni-scanner.com/",
+    "description": "Web App Scanner",
+    "image": null,
+    "manifest_version": "1.6.0"
+}
