@@ -26,3 +26,29 @@ def test_manifests_valid():
         # Check if none
         for key, value in manifest.items():
             assert key in nullable_fields or value is not None
+
+
+def test_ask_for_low_nonexistant_version():
+    manifests = get_manifests("0.1.0", test_manifests=True)
+    assert not manifests
+
+
+def test_ask_for_low_unique_version():
+    manifests = get_manifests("1.5.0", test_manifests=True)
+    assert len(manifests) == 1
+    for tool in manifests.values():
+        assert tool["manifest_version"] == "1.5.0"
+
+
+def test_dont_ask_for_version():
+    manifests = get_manifests(test_manifests=True)
+    for name, tool in manifests.items():
+        if name == "test":
+            assert tool["manifest_version"] == "1.8.0"
+
+
+def test_ask_for_low_version():
+    manifests = get_manifests("1.7.0", test_manifests=True)
+    for name, tool in manifests.items():
+        if name == "test":
+            assert tool["manifest_version"] == "1.7.0"

@@ -8,6 +8,7 @@ from packaging.version import parse
 import re
 
 manifests_folder = Path(__file__).parent / "static" / "manifests"
+test_manifests_folder = Path(__file__).parent.parent / "tests" / "test_manifests"
 
 
 def get_schema(type_schema: Union[str, TypeSchema]) -> TypeSchema:
@@ -59,9 +60,11 @@ def serialize_param(type_schema: Union[str, TypeSchema, List[Union[str, TypeSche
     return r_dict if get_dict else r_dict.get("data")
 
 
-def get_manifests(version_requested: str = None) -> dict:
+def get_manifests(version_requested: str = None, test_manifests: bool = False) -> dict:
     all_manifests_dict = {}
-    for path in manifests_folder.iterdir():
+    paths = list(manifests_folder.iterdir())
+    paths += list(test_manifests_folder.iterdir()) if test_manifests else []
+    for path in paths:
         if path.is_file():
             with path.open() as file:
                 loaded_json = json.load(file)
