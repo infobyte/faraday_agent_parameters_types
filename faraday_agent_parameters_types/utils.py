@@ -63,14 +63,17 @@ def get_manifests(version_requested: str = None) -> dict:
     all_manifests_dict = {}
     for path in manifests_folder.iterdir():
         if path.is_file():
-            manifest_name = re.search(r"^(.+)-.+$", path.stem).group(1)
-            if manifest_name not in all_manifests_dict:
-                all_manifests_dict[manifest_name] = {}
             with path.open() as file:
                 loaded_json = json.load(file)
                 parsed_ver = parse(loaded_json["manifest_version"])
                 if version_requested and parsed_ver > parse(version_requested):
                     continue
+                manifest_name = re.search(r"^(.+)-.+$", path.stem)
+                if not manifest_name:
+                    raise ValueError(f"Incorrect naming for manifest: {path}\n" f'Must validate regex "^(.+)-.+$"')
+                manifest_name = manifest_name.group(1)
+                if manifest_name not in all_manifests_dict:
+                    all_manifests_dict[manifest_name] = {}
                 all_manifests_dict[manifest_name][parsed_ver] = loaded_json
 
     manifests_dict = {}
