@@ -1,6 +1,8 @@
 from pathlib import Path
 from unittest import mock
 
+import pytest
+
 from faraday_agent_parameters_types.utils import get_manifests
 
 needed_manifest_fields = (
@@ -58,3 +60,8 @@ class Test_manifests_versions:
                 assert tool["manifest_version"] == "1.7.0"
             if name == "test2":
                 assert tool["manifest_version"] == "1.6.0"
+
+    def test_incorrect_version_requested(self):
+        with pytest.raises(ValueError) as error:
+            get_manifests("hola")
+        assert "Version requested not valid" in str(error.value)
