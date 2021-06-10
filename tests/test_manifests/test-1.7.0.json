@@ -10,7 +10,7 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Web App Scanners",
-    "name": "arachni",
+    "name": "test",
     "title": "Arachni",
     "website": "https://www.arachni-scanner.com/",
     "description": "Web App Scanner",
