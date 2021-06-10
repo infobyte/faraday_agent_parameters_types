@@ -21,5 +21,6 @@
     "title": "Nmap",
     "website": "https://nmap.org/",
     "description": "Open Source Network Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

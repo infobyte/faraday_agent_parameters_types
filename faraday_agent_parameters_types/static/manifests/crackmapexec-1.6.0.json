@@ -18,5 +18,6 @@
     "title": "Crackmapexec",
     "website": "https://github.com/byt3bl33d3r/CrackMapExec",
     "description": "Active Directory Oriented Tool",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

@@ -15,5 +15,6 @@
     "title": "Sublist3r",
     "website": "https://github.com/aboul3la/Sublist3r",
     "description": "Enumerates Subdomains",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }

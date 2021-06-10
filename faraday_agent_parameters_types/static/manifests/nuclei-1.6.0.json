@@ -15,5 +15,6 @@
     "title": "Nuclei",
     "website": "https://nuclei.projectdiscovery.io/",
     "description": "Vulnerability Scanner",
-    "image": null
+    "image": null,
+    "manifest_version": "1.6.0"
 }
