@@ -62,8 +62,7 @@ def serialize_param(type_schema: Union[str, TypeSchema, List[Union[str, TypeSche
 
 def get_manifests(version_requested: str = None, test_manifests: bool = False) -> dict:
     all_manifests_dict = {}
-    paths = list(manifests_folder.iterdir())
-    paths += list(test_manifests_folder.iterdir()) if test_manifests else []
+    paths = list(manifests_folder.iterdir()) if not test_manifests else list(test_manifests_folder.iterdir())
     for path in paths:
         if path.is_file():
             with path.open() as file:
