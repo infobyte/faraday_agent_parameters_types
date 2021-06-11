@@ -60,7 +60,7 @@ def serialize_param(type_schema: Union[str, TypeSchema, List[Union[str, TypeSche
     return r_dict if get_dict else r_dict.get("data")
 
 
-@lru_cache
+@lru_cache()
 def get_manifests(version_requested: str = None) -> dict:
     all_manifests_dict = {}
 
