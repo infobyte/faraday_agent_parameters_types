@@ -23,7 +23,7 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Network and Vulnerability Scanners",
-    "name": "openvas",
+    "name": "gvm_openvas",
     "title": "Openvas",
     "website": "https://www.openvas.org/",
     "description": "Vulnerability Scanner",

@@ -11,7 +11,7 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Web App Scanners",
-    "name": "nikto",
+    "name": "nikto2",
     "title": "Nikto",
     "website": null,
     "description": "Web Server Scanner",

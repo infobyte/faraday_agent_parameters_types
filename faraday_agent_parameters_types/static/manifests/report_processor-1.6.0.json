@@ -11,7 +11,7 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Report Processor",
-    "name": "reportprocessor",
+    "name": "report_processor",
     "title": "Report Processor",
     "website": "https://faradaysec.com/",
     "description": "Report Uploading Tool",
