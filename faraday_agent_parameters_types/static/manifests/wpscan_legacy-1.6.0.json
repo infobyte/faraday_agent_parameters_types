@@ -11,7 +11,7 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Web App Scanners",
-    "name": "wpscanlegacy",
+    "name": "wpscan_legacy",
     "title": "Wpscan (Legacy)",
     "website": "https://wpscan.com/wordpress-security-scanner",
     "description": "WordPress Security Scanner",

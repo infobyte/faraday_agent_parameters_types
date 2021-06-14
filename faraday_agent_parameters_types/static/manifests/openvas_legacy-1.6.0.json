@@ -15,7 +15,7 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Network and Vulnerability Scanners",
-    "name": "openvaslegacy",
+    "name": "openvas_legacy",
     "title": "Openvas (Legacy)",
     "website": "https://www.openvas.org/",
     "description": "Vulnerability Scanner",
