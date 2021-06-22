@@ -17,6 +17,7 @@ needed_manifest_fields = (
     "description",
     "image",
     "manifest_version",
+    "repo_executor",
 )
 
 nullable_fields = ("website", "image")

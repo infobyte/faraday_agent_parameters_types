@@ -19,5 +19,6 @@
     "website": "https://github.com/byt3bl33d3r/CrackMapExec",
     "description": "Active Directory Oriented Tool",
     "image": null,
-    "manifest_version": "1.6.0"
+    "manifest_version": "1.6.0",
+    "repo_executor": "crackmapexec.py"
 }

@@ -22,5 +22,6 @@
     "website": "https://nmap.org/",
     "description": "Open Source Network Scanner",
     "image": null,
-    "manifest_version": "1.6.0"
+    "manifest_version": "1.6.0",
+    "repo_executor": "nmap.py"
 }
