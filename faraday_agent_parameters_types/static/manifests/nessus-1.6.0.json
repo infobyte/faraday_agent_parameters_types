@@ -20,5 +20,6 @@
     "website": "https://www.tenable.com/products/nessus",
     "description": "Vulnerability Scanner By Tenable",
     "image": null,
-    "manifest_version": "1.6.0"
+    "manifest_version": "1.6.0",
+    "repo_executor": "nessus.py"
 }

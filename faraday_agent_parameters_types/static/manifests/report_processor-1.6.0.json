@@ -16,5 +16,6 @@
     "website": "https://faradaysec.com/",
     "description": "Report Uploading Tool",
     "image": null,
-    "manifest_version": "1.6.0"
+    "manifest_version": "1.6.0",
+    "repo_executor": "report_processor.py"
 }
