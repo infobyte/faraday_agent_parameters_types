@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "TARGET": {"mandatory": true, "type": "ip", "base": "string"},
+        "TARGET": {"mandatory": true, "type": "string", "base": "string"},
         "PORT_LIST": {"mandatory": false, "type": "range", "base": "string"},
         "OPTION_SC": {"mandatory": false, "type": "boolean", "base": "boolean"},
         "OPTION_SV": {"mandatory": false, "type": "boolean", "base": "boolean"},

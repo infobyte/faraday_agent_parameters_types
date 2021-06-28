@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
+        "TARGET_URL": {"mandatory": true, "type": "url", "base": "string"},
         "API_KEY": {"mandatory": true, "type": "string", "base": "string"}
     },
     "environment_variables": [

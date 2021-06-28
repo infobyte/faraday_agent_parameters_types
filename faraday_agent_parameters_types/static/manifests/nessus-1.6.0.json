@@ -1,7 +1,7 @@
 {
     "arguments": {
         "NESSUS_SCAN_NAME":  {"mandatory": false, "type": "string", "base": "string"},
-        "NESSUS_URL": {"mandatory": false, "type": "string", "base": "string"},
+        "NESSUS_URL": {"mandatory": false, "type": "url", "base": "string"},
         "NESSUS_SCAN_TARGET": {"mandatory": true, "type": "string", "base": "string"},
         "NESSUS_SCAN_TEMPLATE": {"mandatory": false, "type": "string", "base": "string"}
     },
