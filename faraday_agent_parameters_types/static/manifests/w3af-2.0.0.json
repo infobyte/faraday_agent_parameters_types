@@ -15,6 +15,6 @@
     "website": "https://w3af.org/",
     "description": "Web App Security Scanner",
     "image": null,
-    "manifest_version": "1.6.0",
+    "manifest_version": "2.0.0",
     "repo_executor": "w3af.py"
 }

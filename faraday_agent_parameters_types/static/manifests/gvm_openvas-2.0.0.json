@@ -28,6 +28,6 @@
     "website": "https://www.openvas.org/",
     "description": "Vulnerability Scanner",
     "image": null,
-    "manifest_version": "1.6.0",
+    "manifest_version": "2.0.0",
     "repo_executor": "gvm_openvas.py"
 }

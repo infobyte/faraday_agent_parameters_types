@@ -16,6 +16,6 @@
     "website": null,
     "description": "Web Server Scanner",
     "image": null,
-    "manifest_version": "1.6.0",
+    "manifest_version": "2.0.0",
     "repo_executor": "nikto2.py"
 }
