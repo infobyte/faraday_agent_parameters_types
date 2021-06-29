@@ -1,4 +1,6 @@
 import json
+from functools import lru_cache
+
 from faraday_agent_parameters_types.data_types import DATA_TYPE
 from typing import Union, List, Any
 from marshmallow import ValidationError
@@ -58,6 +60,7 @@ def serialize_param(type_schema: Union[str, TypeSchema, List[Union[str, TypeSche
     return r_dict if get_dict else r_dict.get("data")
 
 
+@lru_cache()
 def get_manifests(version_requested: str = None) -> dict:
     all_manifests_dict = {}
 

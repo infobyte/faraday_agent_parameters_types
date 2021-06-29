@@ -2,7 +2,7 @@
     "arguments": {
         "API_HOST": {"mandatory": true, "type": "string", "base": "string"},
         "API_KEY": {"mandatory": true, "type": "string", "base": "string"},
-        "TARGET_URL": {"mandatory": true, "type": "string", "base": "string"},
+        "TARGET_URL": {"mandatory": true, "type": "url", "base": "string"},
         "NAMED_CONFIGURATION": {"mandatory": false, "type": "string", "base": "string"}
     },
     "environment_variables": [
@@ -16,5 +16,6 @@
     "website": "https://portswigger.net/burp/vulnerability-scanner",
     "description": "Web App Scanner",
     "image": null,
-    "manifest_version": "1.6.0"
+    "manifest_version": "2.0.0",
+    "repo_executor": "burp.py"
 }

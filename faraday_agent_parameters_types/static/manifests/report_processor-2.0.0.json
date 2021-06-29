@@ -11,10 +11,11 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "Report Processor",
-    "name": "reportprocessor",
+    "name": "report_processor",
     "title": "Report Processor",
     "website": "https://faradaysec.com/",
     "description": "Report Uploading Tool",
     "image": null,
-    "manifest_version": "1.6.0"
+    "manifest_version": "2.0.0",
+    "repo_executor": "report_processor.py"
 }

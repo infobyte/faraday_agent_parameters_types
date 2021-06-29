@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "TARGET": {"mandatory": true, "type": "ip", "base": "string"},
+        "TARGET": {"mandatory": true, "type": "string", "base": "string"},
         "PORT_LIST": {"mandatory": false, "type": "range", "base": "string"},
         "OPTION_SC": {"mandatory": false, "type": "boolean", "base": "boolean"},
         "OPTION_SV": {"mandatory": false, "type": "boolean", "base": "boolean"},
@@ -22,5 +22,6 @@
     "website": "https://nmap.org/",
     "description": "Open Source Network Scanner",
     "image": null,
-    "manifest_version": "1.6.0"
+    "manifest_version": "2.0.0",
+    "repo_executor": "nmap.py"
 }
