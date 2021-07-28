@@ -16,6 +16,6 @@
     "website": "https://www.rapid7.com/products/insightvm",
     "description": "Hosts App Scanner",
     "image": null,
-    "manifest_version": "2.0.1",
+    "manifest_version": "2.0.0",
     "repo_executor": "insightvm.py"
 }
