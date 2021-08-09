@@ -12,7 +12,7 @@
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "HostsApp Scanners",
     "name": "insightvm",
-    "title": "insightvm",
+    "title": "InsightVM",
     "website": "https://www.rapid7.com/products/insightvm",
     "description": "Hosts App Scanner",
     "image": null,
