@@ -1,5 +1,5 @@
 {
-    "arguments": {        
+    "arguments": {
         "EXECUTIVE_REPORT_ID": {"mandatory": true, "type": "integer", "base": "integer"}
     },
     "environment_variables": [
@@ -11,11 +11,11 @@
     ],
     "cmd": "python3 {EXECUTOR_FILE_PATH}",
     "category": "HostsApp Scanners",
-    "name": "InsightVM",
-    "title": "InsightVM",
+    "name": "insightvm",
+    "title": "insightvm",
     "website": "https://www.rapid7.com/products/insightvm",
     "description": "Hosts App Scanner",
     "image": null,
-    "manifest_version": "1.0.0",
+    "manifest_version": "2.0.1",
     "repo_executor": "insightvm.py"
 }
