@@ -1,5 +1,6 @@
 1.0.2 [Oct 19th, 2021]:
 ---
+ * added new parameter type Script for nmap
 
 1.0.1 [Aug 9th, 2021]:
 ---
