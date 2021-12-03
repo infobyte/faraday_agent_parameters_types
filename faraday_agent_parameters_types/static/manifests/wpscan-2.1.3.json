@@ -1,6 +1,8 @@
 {
     "arguments": {
-        "WPSCAN_TARGET_URL": {"mandatory": true, "type": "url", "base": "string"}
+        "WPSCAN_TARGET_URL": {"mandatory": true, "type": "url", "base": "string"},
+        "WPSCAN_API_TOKEN": {"mandatory": false, "type": "string", "base": "string"},
+        "WPSCAN_RANDOM_USER_AGENT": {"mandatory": false, "type": "boolean", "base": "boolean"}
     },
     "environment_variables": [
 
@@ -15,6 +17,6 @@
     "website": "https://wpscan.com/wordpress-security-scanner",
     "description": "WordPress Security Scanner",
     "image": null,
-    "manifest_version": "2.0.0",
+    "manifest_version": "2.1.3",
     "repo_executor": "wpscan.py"
 }
