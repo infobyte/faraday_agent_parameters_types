@@ -17,6 +17,6 @@
     "website": "https://wpscan.com/wordpress-security-scanner",
     "description": "WordPress Security Scanner",
     "image": null,
-    "manifest_version": "2.1.3",
+    "manifest_version": "2.1.2",
     "repo_executor": "wpscan.py"
 }
