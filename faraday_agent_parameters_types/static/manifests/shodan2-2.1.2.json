@@ -1,0 +1,20 @@
+{
+    "arguments": {
+        "SHODAN_QUERY": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+
+    ],
+    "check_cmds": [
+        "shodan version"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Network Tools",
+    "name": "shodan2",
+    "title": "Shodan",
+    "website": "https://www.shodan.io/",
+    "description": "Ip database",
+    "image": null,
+    "manifest_version": "2.1.2",
+    "repo_executor": "shodan2.py"
+}
