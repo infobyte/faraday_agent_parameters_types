@@ -1,3 +1,8 @@
+1.0.3 [Dec 13th, 2021]:
+---
+ * add commands --api-token and --random-user-agent to wpscan
+ * Add shodan's manifest
+
 1.0.2 [Oct 19th, 2021]:
 ---
  * added new parameter type Script for nmap
