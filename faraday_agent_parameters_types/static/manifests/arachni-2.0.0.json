@@ -1,6 +1,7 @@
 {
     "arguments": {
-        "NAME_URL": {"mandatory": true, "type": "url", "base": "string"}
+        "NAME_URL": {"mandatory": true, "type": "url", "base": "string"},
+        "TIMEOUT": {"mandatory": false, "type": "string", "base": "string"}
     },
     "environment_variables": [
         "ARACHNI_PATH"
