@@ -1,0 +1,20 @@
+{
+    "arguments": {
+        "TARGET_URL": {"mandatory": true, "type": "url", "base": "string"}
+    },
+    "environment_variables": [
+
+    ],
+    "check_cmds": [
+        "nikto -Version"
+    ],
+    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "nikto2",
+    "title": "Nikto",
+    "website": null,
+    "description": "Web Server Scanner",
+    "image": null,
+    "manifest_version": "2.1.3",
+    "repo_executor": "nikto2.py"
+}
