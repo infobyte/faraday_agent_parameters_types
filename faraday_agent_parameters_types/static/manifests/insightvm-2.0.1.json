@@ -1,6 +1,7 @@
 {
     "arguments": {
-        "EXECUTIVE_REPORT_ID": {"mandatory": true, "type": "integer", "base": "integer"}
+        "EXECUTIVE_REPORT_ID": {"mandatory": false, "type": "integer", "base": "integer"},
+        "SITE_ID": {"mandatory": false, "type": "integer", "base": "integer"}
     },
     "environment_variables": [
         "INSIGHTVM_HOST",
