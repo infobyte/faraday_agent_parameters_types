@@ -3,7 +3,7 @@
         "TARGET_URL": {"mandatory": true, "type": "url", "base": "string"}
     },
     "environment_variables": [
-        "API_KEY"
+        "ZAP_API_KEY"
     ],
     "check_cmds": [
 
