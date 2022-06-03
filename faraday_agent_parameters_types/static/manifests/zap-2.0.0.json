@@ -1,9 +1,9 @@
 {
     "arguments": {
         "TARGET_URL": {"mandatory": true, "type": "url", "base": "string"},
+        "API_KEY": {"mandatory": true, "type": "string", "base": "string"}
     },
     "environment_variables": [
-        "API_KEY": {"mandatory": true, "type": "string", "base": "string"}
     ],
     "check_cmds": [
 
@@ -15,6 +15,6 @@
     "website": "https://www.zaproxy.org/",
     "description": "Web App Scanner",
     "image": null,
-    "manifest_version": "2.0.1",
+    "manifest_version": "2.0.0",
     "repo_executor": "zap.py"
 }
