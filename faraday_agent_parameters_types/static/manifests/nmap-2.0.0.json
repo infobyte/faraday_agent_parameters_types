@@ -15,7 +15,7 @@
     "check_cmds": [
         "nmap --version"
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Network and Vulnerability Scanners",
     "name": "nmap",
     "title": "Nmap",

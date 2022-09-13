@@ -12,7 +12,7 @@
     "check_cmds": [
         "crackmapexec --help"
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Pentesting",
     "name": "crackmapexec",
     "title": "Crackmapexec",

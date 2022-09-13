@@ -10,7 +10,7 @@
     ],
     "check_cmds": [
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "HostsApp Scanners",
     "name": "insightvm",
     "title": "InsightVM",

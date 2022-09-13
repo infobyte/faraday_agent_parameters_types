@@ -13,7 +13,7 @@
     "check_cmds": [
         "omp --help"
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Network and Vulnerability Scanners",
     "name": "openvas_legacy",
     "title": "Openvas (Legacy)",

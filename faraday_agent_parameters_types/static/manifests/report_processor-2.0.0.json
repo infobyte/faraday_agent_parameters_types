@@ -9,7 +9,7 @@
     "check_cmds": [
 
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Report Processor",
     "name": "report_processor",
     "title": "Report Processor",
