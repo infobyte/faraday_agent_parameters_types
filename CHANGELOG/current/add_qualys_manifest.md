@@ -1,0 +1,1 @@
+[Add] Add Qualys manifest

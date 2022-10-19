@@ -1,0 +1,22 @@
+{
+    "arguments": {
+        "TARGET_IP": {"mandatory": true, "type": "string", "base": "string"},
+        "OPTION_PROFILE": {"mandatory": true, "type": "string", "base": "string"},
+        "PULL_INTERVAL": {"mandatory": false, "type": "integer", "base": "integer"}
+    },
+    "environment_variables": [
+        "QUALYS_USERNAME",
+        "QUALYS_PASSWORD"
+    ],
+    "check_cmds": [
+    ],
+    "cmd": "{EXECUTOR_FILE_PATH}",
+    "category": "Web App Scanners",
+    "name": "qualys",
+    "title": "QualysGuard",
+    "website": "https://www.qualys.com/",
+    "description": "Web App Scanner",
+    "image": null,
+    "manifest_version": "2.0.0",
+    "repo_executor": "qualys.py"
+}
