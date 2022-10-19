@@ -8,7 +8,7 @@
     "check_cmds": [
         "python2 --version"
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Web App Scanners",
     "name": "w3af",
     "title": "w3af",

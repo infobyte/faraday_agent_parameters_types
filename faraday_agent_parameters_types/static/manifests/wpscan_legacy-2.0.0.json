@@ -9,7 +9,7 @@
         "docker -v",
         "docker images -q wpscanteam/wpscan"
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Web App Scanners",
     "name": "wpscan_legacy",
     "title": "Wpscan (Legacy)",

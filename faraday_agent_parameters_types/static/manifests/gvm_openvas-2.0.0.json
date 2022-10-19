@@ -21,7 +21,7 @@
     "check_cmds": [
         "python3 -m pip show python-gvm"
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Network and Vulnerability Scanners",
     "name": "gvm_openvas",
     "title": "Openvas",

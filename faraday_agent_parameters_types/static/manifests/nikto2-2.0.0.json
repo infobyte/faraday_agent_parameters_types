@@ -9,7 +9,7 @@
     "check_cmds": [
         "nikto -Version"
     ],
-    "cmd": "python3 {EXECUTOR_FILE_PATH}",
+    "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Web App Scanners",
     "name": "nikto2",
     "title": "Nikto",
