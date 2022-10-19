@@ -1,7 +1,8 @@
 {
     "arguments": {
         "TARGET_IP": {"mandatory": true, "type": "string", "base": "string"},
-        "OPTION_PROFILE": {"mandatory": false, "type": "string", "base": "string"}
+        "OPTION_PROFILE": {"mandatory": true, "type": "string", "base": "string"},
+        "PULL_INTERVAL": {"mandatory": false, "type": "integer", "base": "integer"}
     },
     "environment_variables": [
         "QUALYS_USERNAME",
