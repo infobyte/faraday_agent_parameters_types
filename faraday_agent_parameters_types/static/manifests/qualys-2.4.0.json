@@ -17,6 +17,6 @@
     "website": "https://www.qualys.com/",
     "description": "Web App Scanner",
     "image": null,
-    "manifest_version": "2.0.0",
+    "manifest_version": "2.4.0",
     "repo_executor": "qualys.py"
 }

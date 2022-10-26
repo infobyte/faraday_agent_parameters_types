@@ -1,3 +1,8 @@
+1.1.0 [Oct 26th, 2022]:
+---
+ * [Add] Add Qualys manifest
+ * Remove python from cmd field for python executors manifiest
+
 1.0.4 [Sep 5th, 2022]:
 ---
  * Add site_id optional parameter and make executive_report_id optional to insightVM manifest
