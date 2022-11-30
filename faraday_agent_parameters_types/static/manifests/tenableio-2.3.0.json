@@ -1,0 +1,26 @@
+{
+    "arguments": {
+        "TENABLE_SCAN_NAME":  {"mandatory": false, "type": "string", "base": "string"},
+        "TENABLE_SCANNER_NAME":  {"mandatory": false, "type": "string", "base": "string"},
+        "TENABLE_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"},
+        "TENABLE_SCAN_TARGET": {"mandatory": true, "type": "string", "base": "string"},
+        "TENABLE_SCAN_TEMPLATE": {"mandatory": false, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+        "TENABLE_ACCESS_KEY",
+        "TENABLE_SECRET_KEY",
+        "TENABLE_PULL_INTERVAL"
+    ],
+    "check_cmds": [
+
+    ],
+    "cmd": "{EXECUTOR_FILE_PATH}",
+    "category": "Network and Vulnerability Scanners",
+    "name": "tenableio",
+    "title": "TenableIO",
+    "website": "https://www.tenable.com/products/tenable-io",
+    "description": "Vulnerability Scanner By Tenable",
+    "image": null,
+    "manifest_version": "2.3.0",
+    "repo_executor": "tenableio.py"
+}
