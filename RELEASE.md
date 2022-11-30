@@ -1,3 +1,8 @@
+1.2.0 [Nov 30th, 2022]:
+---
+ * [ADD] Add sonar manifest
+ * [ADD] Add tenable.io manifest
+
 1.1.0 [Oct 26th, 2022]:
 ---
  * [Add] Add Qualys manifest
