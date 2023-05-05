@@ -3,7 +3,6 @@ from marshmallow import Schema, post_load
 
 
 class TypeSchema(Schema):
-
     # Overridden by data class values
     data: Any
     type: Any

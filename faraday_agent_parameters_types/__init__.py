@@ -9,5 +9,4 @@ from typing import Union
 
 
 def manifests_folder() -> Union[Path, str]:
-
     return Path(__file__).parent / "static" / "manifests"
