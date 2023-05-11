@@ -20,6 +20,6 @@
     "website": "https://cloud.appscan.com",
     "description": "Vulnerability Scanner By Hcl",
     "image": null,
-    "manifest_version": "2.0.0",
+    "manifest_version": "2.6.0",
     "repo_executor": "appscan.py"
 }
