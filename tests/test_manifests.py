@@ -65,4 +65,4 @@ class Test_manifests_versions:
     def test_incorrect_version_requested(self):
         with pytest.raises(ValueError) as error:
             get_manifests("hola")
-        assert "Version requested not valid" in str(error.value)
+        assert "Invalid version: 'hola'" in str(error.value)
