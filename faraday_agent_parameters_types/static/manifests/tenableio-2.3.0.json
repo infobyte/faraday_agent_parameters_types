@@ -3,8 +3,9 @@
         "TENABLE_SCAN_NAME":  {"mandatory": false, "type": "string", "base": "string"},
         "TENABLE_SCANNER_NAME":  {"mandatory": false, "type": "string", "base": "string"},
         "TENABLE_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"},
-        "TENABLE_SCAN_TARGET": {"mandatory": true, "type": "string", "base": "string"},
-        "TENABLE_SCAN_TEMPLATE": {"mandatory": false, "type": "string", "base": "string"}
+        "TENABLE_SCAN_TARGET": {"mandatory": false, "type": "string", "base": "string"},
+        "TENABLE_SCAN_TEMPLATE": {"mandatory": false, "type": "string", "base": "string"},
+        "TENABLE_RELAUNCH_SCAN": {"mandatory": false, "type": "boolean", "base": "boolean"}
     },
     "environment_variables": [
         "TENABLE_ACCESS_KEY",
