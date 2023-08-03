@@ -1,7 +1,10 @@
-1.3.0:
+1.3.1 [Aug 3th, 2023]:
+---
+ * [MOD] add relauch parameter and make TENABLE_SCAN_ID optional to tenableio executor #32
+
+1.3.0 [July 7th, 2023]:
 ---
  * [ADD] Add appscan manifest #31
- * 7th July, 2023
 
 1.2.0 [Nov 30th, 2022]:
 ---
