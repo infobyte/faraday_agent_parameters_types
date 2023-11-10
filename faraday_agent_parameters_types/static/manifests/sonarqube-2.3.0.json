@@ -1,7 +1,8 @@
 {
     "arguments": {
         "TOKEN": {"mandatory": true, "type": "string", "base": "string"},
-        "COMPONENT_KEY": {"mandatory": false, "type": "string", "base": "string"}
+        "COMPONENT_KEY": {"mandatory": false, "type": "string", "base": "string"},
+        "GET_HOTSPOT": {"mandatory": false, "type": "boolean", "base": "boolean"}
     },
     "environment_variables": [
       "SONAR_URL"
