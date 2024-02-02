@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "DEPENDABOT_REPO": {"mandatory": true, "type": "string", "base": "string"},
+        "DEPENDABOT_REPOSITORY": {"mandatory": true, "type": "string", "base": "string"},
         "DEPENDABOT_OWNER": {"mandatory": true, "type": "string", "base": "string"}
     },
     "environment_variables": [
