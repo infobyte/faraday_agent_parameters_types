@@ -1,6 +1,10 @@
+1.4.0 [Feb 8th, 2024]:
+---
+ * [MOD] Add dependabot manifest. #35
+
 1.3.1 [Aug 3th, 2023]:
 ---
- * [MOD] add relauch parameter and make TENABLE_SCAN_ID optional to tenableio executor #32
+ * [MOD] Add relaunch parameter and make TENABLE_SCAN_ID optional to tenableio executor #32
 
 1.3.0 [July 7th, 2023]:
 ---
