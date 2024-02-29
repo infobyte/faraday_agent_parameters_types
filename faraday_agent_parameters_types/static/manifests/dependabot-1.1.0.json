@@ -1,10 +1,10 @@
 {
     "arguments": {
-        "DEPENDABOT_REPOSITORY": {"mandatory": true, "type": "string", "base": "string"},
-        "DEPENDABOT_OWNER": {"mandatory": true, "type": "string", "base": "string"}
+        "GITHUB_REPOSITORY": {"mandatory": true, "type": "string", "base": "string"}
     },
     "environment_variables": [
-        "DEPENDABOT_TOKEN"
+        "GITHUB_TOKEN",
+        "GITHUB_OWNER"
     ],
     "check_cmds": [],
     "cmd": "{EXECUTOR_FILE_PATH}",
@@ -14,6 +14,6 @@
     "website": "https://github.com/dependabot",
     "description": "Source Code Analysis",
     "image": null,
-    "manifest_version": "1.0.0",
+    "manifest_version": "1.1.0",
     "repo_executor": "dependabot.py"
 }
