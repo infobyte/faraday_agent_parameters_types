@@ -1,0 +1,19 @@
+{
+    "arguments": {
+        "GITHUB_REPOSITORY": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+        "GITHUB_TOKEN",
+        "GITHUB_OWNER"
+    ],
+    "check_cmds": [],
+    "cmd": "{EXECUTOR_FILE_PATH}",
+    "category": "Source Code Analysis",
+    "name": "codeql",
+    "title": "CodeQL",
+    "website": "https://codeql.github.com/",
+    "description": "Source Code Analysis",
+    "image": null,
+    "manifest_version": "1.0.0",
+    "repo_executor": "codeql.py"
+}
