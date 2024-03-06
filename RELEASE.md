@@ -1,3 +1,7 @@
+1.5.0 [Mar 6th, 2024]:
+---
+ * [MOD] Add GitHub code scanning tools manifest. #36
+
 1.4.0 [Feb 8th, 2024]:
 ---
  * [MOD] Add dependabot manifest. #35
