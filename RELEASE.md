@@ -1,3 +1,7 @@
+1.5.1 [Mar 7th, 2024]:
+---
+ * [MOD] Add hotspots option to sonarqube. #33
+
 1.5.0 [Mar 6th, 2024]:
 ---
  * [MOD] Add GitHub code scanning tools manifest. #36
