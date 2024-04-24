@@ -3,7 +3,7 @@
         "TENABLE_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"}
     },
     "environment_variables": [
-        "TENABLE_URL",
+        "TENABLE_HOST",
         "TENABLE_ACCESS_KEY",
         "TENABLE_SECRET_KEY"
     ],
