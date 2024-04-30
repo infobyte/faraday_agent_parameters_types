@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "TENABLE_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"}
+        "TENABLE_SCAN_ID": {"mandatory": true, "type": "list", "base": "list"}
     },
     "environment_variables": [
         "TENABLE_HOST",
