@@ -13,7 +13,7 @@ class FaradayList:
 class FaradayListSchema(TypeSchema):
     data = fields.List(fields.Raw())
     type = FaradayList
-    _composed_list = []
+    _composed_list = (int, str)
 
     @validates("data")
     def validate_length_characters(self, items):
