@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "CYBERVISION_PRESETS": {"mandatory": true, "type": "string", "base": "string"}
+        "CYBERVISION_PRESETS": {"mandatory": true, "type": "list", "base": "list"}
     },
     "environment_variables": [
         "CYBERVISION_TOKEN",
