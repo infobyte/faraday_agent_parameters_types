@@ -1,0 +1,21 @@
+{
+    "arguments": {
+        "TENABLE_SCAN_ID": {"mandatory": true, "type": "list", "base": "list"}
+    },
+    "environment_variables": [
+        "TENABLE_HOST",
+        "TENABLE_ACCESS_KEY",
+        "TENABLE_SECRET_KEY"
+    ],
+    "check_cmds": [
+    ],
+    "cmd": "{EXECUTOR_FILE_PATH}",
+    "category": "Network and Vulnerability Scanners",
+    "name": "tenablesc",
+    "title": "TenableSC",
+    "website": "https://www.tenable.com/products/tenable-sc",
+    "description": "Vulnerability Scanner By Tenable",
+    "image": null,
+    "manifest_version": "1.0.0",
+    "repo_executor": "tenablesc.py"
+}
