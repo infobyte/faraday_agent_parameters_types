@@ -1,3 +1,9 @@
+1.6.0 [May 22th, 2024]:
+---
+ * [ADD] Add Tenable sc manifest. #30
+ * [ADD] Add Cisco Cyber Vision agent parameters. #38
+ * [MOD] Modify Tenable IO agent parameters. #37
+
 1.5.1 [Mar 7th, 2024]:
 ---
  * [MOD] Add hotspots option to sonarqube. #33
