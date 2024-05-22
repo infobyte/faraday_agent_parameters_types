@@ -1,11 +1,12 @@
 {
     "arguments": {
-        "TENABLE_SCAN_NAME":  {"mandatory": false, "type": "string", "base": "string"},
-        "TENABLE_SCANNER_NAME":  {"mandatory": false, "type": "string", "base": "string"},
-        "TENABLE_SCAN_ID": {"mandatory": false, "type": "string", "base": "string"},
-        "TENABLE_SCAN_TARGET": {"mandatory": false, "type": "string", "base": "string"},
-        "TENABLE_SCAN_TEMPLATE": {"mandatory": false, "type": "string", "base": "string"},
-        "TENABLE_RELAUNCH_SCAN": {"mandatory": false, "type": "boolean", "base": "boolean"}
+        "SCAN_NAME":  {"mandatory": false, "type": "string", "base": "string", "display_name":"Scan Name", "description":"This is your new scan name."},
+        "SCAN_ID": {"mandatory": false, "type": "string", "base": "string", "display_name":"Scan ID", "description":"Add Scan ID to relaunch or retrieve scan results."},
+        "SCAN_TARGETS": {"mandatory": false, "type": "list", "base": "list", "display_name":"Scan Targets", "description":"A list of targets separated by ','."},
+        "TEMPLATE_NAME": {"mandatory": false, "type": "string", "base": "string", "display_name":"Nessus Template Name", "description":"Must be a valid template name."},
+        "RELAUNCH_SCAN": {"mandatory": false, "type": "boolean", "base": "boolean", "display_name":"Relaunch Scan", "description":"Check if you want to rerun scan. Must provide Scan ID."},
+        "USE_USER_DEFINED_TEMPLATE": {"mandatory": false, "type": "boolean", "base": "boolean", "display_name":"Use user defined template?", "description":"Check if you want to use user defined templates."},
+        "AGENT_GROUP_NAME": {"mandatory": false, "type": "string", "base": "string", "display_name":"Agent Group", "description":"Your agent group for not user-defined templates."}
     },
     "environment_variables": [
         "TENABLE_ACCESS_KEY",
