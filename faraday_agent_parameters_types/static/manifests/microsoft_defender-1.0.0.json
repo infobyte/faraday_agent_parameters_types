@@ -1,0 +1,20 @@
+{
+    "arguments": {
+        "DAYS_OLD": {"mandatory": true, "type": "string", "base": "string"}
+    },
+    "environment_variables": [
+        "TENANT_ID",
+        "CLIENT_ID",
+        "CLIENT_SECRET"
+    ],
+    "check_cmds": [],
+    "cmd": "{EXECUTOR_FILE_PATH}",
+    "category": "Network and Vulnerability Scanners",
+    "name": "microsoft_defender",
+    "title": "Microsoft Defender for Endpoint",
+    "website": "https://www.microsoft.com/en-us/security/business/endpoint-security/microsoft-defender-endpoint",
+    "description": "Network and Vulnerability Scanners",
+    "image": null,
+    "manifest_version": "1.0.0",
+    "repo_executor": "microsoft_defender.py"
+}
