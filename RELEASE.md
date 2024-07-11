@@ -1,3 +1,7 @@
+1.7.0 [Jul 11th, 2024]:
+---
+ * [ADD] Add Microsoft Defender agent parameters. #39
+
 1.6.0 [May 22th, 2024]:
 ---
  * [ADD] Add Tenable sc manifest. #30
