@@ -1,7 +1,7 @@
 {
     "arguments": {
-        "TARGET": {"mandatory": true, "type": "string", "base": "string"},
-        "PORT_LIST": {"mandatory": false, "type": "string", "base": "string"},
+        "TARGET": {"mandatory": true, "type": "list", "base": "list"},
+        "PORT_LIST": {"mandatory": false, "type": "list", "base": "list"},
         "OPTION_SC": {"mandatory": false, "type": "boolean", "base": "boolean"},
         "OPTION_SV": {"mandatory": false, "type": "boolean", "base": "boolean"},
         "OPTION_PN": {"mandatory": false, "type": "boolean", "base": "boolean"},
