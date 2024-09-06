@@ -10,7 +10,7 @@
     "check_cmds": [
     ],
     "cmd": "{EXECUTOR_FILE_PATH}",
-    "category": "Source Code Analisys",
+    "category": "Source Code Analysis",
     "name": "sonarqube",
     "title": "SonarQube",
     "website": "https://www.sonarqube.org/",
