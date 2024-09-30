@@ -1,3 +1,7 @@
+1.7.1 [Sep 20th, 2024]:
+---
+ * [MOD] Change Nuclei Arguments to list type. #42
+
 1.7.0 [Jul 11th, 2024]:
 ---
  * [ADD] Add Microsoft Defender agent parameters. #39
