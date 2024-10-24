@@ -1,48 +1,50 @@
+1.7.2 [Oct 24th, 2024]:
+---
+ * [MOD] Changed Nmap TARGET and PORT_LIST to list type. #43
+
 1.7.1 [Sep 20th, 2024]:
 ---
- * [MOD] Change Nuclei Arguments to list type. #42
+ * [MOD] Changed Nuclei Arguments to list type. #42
 
 1.7.0 [Jul 11th, 2024]:
 ---
- * [ADD] Add Microsoft Defender agent parameters. #39
+ * [ADD] Added Microsoft Defender agent parameters. #39
 
-1.6.0 [May 22th, 2024]:
+1.6.0 [May 22nd, 2024]:
 ---
- * [ADD] Add Tenable sc manifest. #30
- * [ADD] Add Cisco Cyber Vision agent parameters. #38
+ * [ADD] Added Tenable sc manifest. #30
+ * [ADD] Added Cisco Cyber Vision agent parameters. #38
  * [MOD] Modify Tenable IO agent parameters. #37
 
 1.5.1 [Mar 7th, 2024]:
 ---
- * [MOD] Add hotspots option to sonarqube. #33
+ * [MOD] Added hotspots option to sonarqube. #33
 
 1.5.0 [Mar 6th, 2024]:
 ---
- * [MOD] Add GitHub code scanning tools manifest. #36
+ * [MOD] Added GitHub code scanning tools manifest. #36
 
 1.4.0 [Feb 8th, 2024]:
 ---
- * [MOD] Add dependabot manifest. #35
+ * [MOD] Added dependabot manifest. #35
 
-1.3.1 [Aug 3th, 2023]:
+1.3.1 [Aug 3rd, 2023]:
 ---
- * [MOD] Add relaunch parameter and make TENABLE_SCAN_ID optional to tenableio executor #32
+ * [MOD] Added relaunch parameter and make TENABLE_SCAN_ID optional to tenableio executor #32
 
 1.3.0 [July 7th, 2023]:
 ---
- * [ADD] Add appscan manifest #31
+ * [ADD] Add AppScan manifest #31
 
 1.2.0 [Nov 30th, 2022]:
 ---
- * [ADD] Add sonar manifest
-
-
- * [ADD] Add tenable.io manifest
+ * [ADD] Added sonar manifest
+ * [ADD] Added tenable.io manifest
 
 1.1.0 [Oct 26th, 2022]:
 ---
- * [Add] Add Qualys manifest
- * Remove python from cmd field for python executors manifiest
+ * [Add] Added Qualys manifest
+ * Remove python from cmd field for python executors manifest
 
 1.0.4 [Sep 5th, 2022]:
 ---
