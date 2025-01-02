@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "TENABLE_FETCH_ALL_COMPLETED_SCANS": {"mandatory": false, "type": "boolean", "base": "boolean"},
+        "COMPLETED_SCANS": {"mandatory": false, "type": "boolean", "base": "boolean"},
         "TENABLE_SCAN_ID": {"mandatory": false, "type": "list", "base": "list"}
     },
     "environment_variables": [
