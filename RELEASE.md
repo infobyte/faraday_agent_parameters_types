@@ -1,3 +1,8 @@
+1.7.3 [Jan 6th, 2025]:
+---
+ * [MOD] Added a boolean field to retrieve all completed scans from Tenable SC. #47
+ * [MOD] All legacy parameters for Cisco Cyber Vision were renamed. Also, new ones were added. #48
+
 1.7.2 [Oct 24th, 2024]:
 ---
  * [MOD] Changed Nmap TARGET and PORT_LIST to list type. #43
