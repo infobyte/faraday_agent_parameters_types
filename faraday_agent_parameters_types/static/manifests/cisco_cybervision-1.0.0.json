@@ -1,6 +1,9 @@
 {
     "arguments": {
-        "CYBERVISION_PRESETS": {"mandatory": true, "type": "list", "base": "list"}
+        "MY_PRESETS": {"mandatory": false, "type": "boolean", "base": "boolean"},
+        "PRESETS_CONTAINING": {"mandatory": false, "type": "string", "base": "string"},
+        "REFRESH_PRESETS": {"mandatory": false, "type": "boolean", "base": "boolean"},
+        "SPECIFIC_PRESETS": {"mandatory": false, "type": "list", "base": "list"}
     },
     "environment_variables": [
         "CYBERVISION_TOKEN",
