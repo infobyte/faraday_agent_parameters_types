@@ -12,6 +12,7 @@ class FaradayDomainsList:
     class_name: str = field(default="domains", init=False)
     base: str = field(default="list", init=False)
 
+
 class FaradayDomainsListSchema(TypeSchema):
     data = fields.List(fields.Raw())
     type = FaradayDomainsList
