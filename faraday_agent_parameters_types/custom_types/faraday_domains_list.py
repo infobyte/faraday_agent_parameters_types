@@ -10,12 +10,13 @@ from ..faraday_agent_parameters_types import TypeSchema
 class FaradayDomainsList:
     data: list = field(default_factory=list)
     class_name: str = field(default="domains", init=False)
-    base: str = field(default="list", init=False)
+    base: str = field(default="domains", init=False)
 
 
 class FaradayDomainsListSchema(TypeSchema):
     data = fields.List(fields.Raw())
     type = FaradayDomainsList
+    _composed = (str,)
 
     @validates("data")
     def validate_domain(self, items):
