@@ -46,35 +46,26 @@
     - if: '$TEST_ALPHA'
       when: on_success
 
-unit_test 3.7:
-    extends: .latest_unit_test_base
-    image: python:3.7
-
-unit_test 3.8:
-    extends: .latest_unit_test_base
-    image: python:3.8
-
 unit_test 3.9:
   extends: .latest_unit_test_base
   image: python:3.9
 
-.unit_test 3.10: # To activate in beta (May 3rd 2021)
+.unit_test 3.10:
     extends: .latest_unit_test_base
-    image: python:3.10-rc
-    allow_failure: true
+    image: python:3.10
 
-alpha_unit_test 3.7:
-    extends: .alpha_unit_test_base
-    image: python:3.7
-
-alpha_unit_test 3.8:
-    extends: .alpha_unit_test_base
-    image: python:3.8
+.unit_test 3.11:
+    extends: .latest_unit_test_base
+    image: python:3.11
 
 alpha_unit_test 3.9:
     extends: .alpha_unit_test_base
     image: python:3.9
 
-.alpha_unit_test 3.10: # To activate in beta (May 3rd 2021)
+.alpha_unit_test 3.10:
     extends: .alpha_unit_test_base
-    image: python:3.10-rc
+    image: python:3.10
+
+.alpha_unit_test 3.11:
+    extends: .alpha_unit_test_base
+    image: python:3.11
