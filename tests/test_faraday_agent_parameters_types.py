@@ -17,6 +17,7 @@ from faraday_agent_parameters_types.custom_types import (
     faraday_ip,
     faraday_float,
     faraday_url,
+    faraday_domains_list,
 )
 
 from ipaddress import IPv4Address, IPv6Address
@@ -29,6 +30,10 @@ indentify_dict = [
     {
         "obj": {"type": "list", "composed": ["integer", "string"]},
         "class": faraday_list.FaradayListSchema(),
+    },
+    {
+        "obj": {"type": "domains"},
+        "class": faraday_domains_list.FaradayDomainsListSchema(),
     },
     {"obj": {"type": "ip"}, "class": faraday_ip.FaradayIPSchema()},
     {"obj": {"type": "float"}, "class": faraday_float.FaradayFloatSchema()},
@@ -128,6 +133,38 @@ field_dict = [
             {"data": {"test": "test"}},
             1,
             {"test": "test"},
+        ],
+    },
+    # DOMAINS LIST
+    {
+        "obj": {"type": "list", "composed": (str,)},
+        "class": faraday_domains_list.FaradayDomainsListSchema(),
+        "valid": {
+            "deser": {
+                "fields": [
+                    {
+                        "data": ["domain.com", "testdata.com"],
+                        "value": ["domain.com", "testdata.com"],
+                    }
+                ],
+            },
+            "ser": {
+                "fields": [
+                    {
+                        "data": ["domain.com", "testdata.com"],
+                        "value": ["domain.com", "testdata.com"],
+                    }
+                ],
+            },
+        },
+        "invalid": [
+            "test",
+            {"data": 1},
+            {"data": "test"},
+            {"data": {"test": "test"}},
+            1,
+            {"test": "test"},
+            ["www.google.com", "https://thisisaweb.com", "test_data.com"],
         ],
     },
     # RANGE
