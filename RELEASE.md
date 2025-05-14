@@ -1,3 +1,7 @@
+1.8.0 [May 14th, 2025]:
+---
+ * [ADD] Added a new domain list data type. #49
+
 1.7.3 [Jan 6th, 2025]:
 ---
  * [MOD] Added a boolean field to retrieve all completed scans from Tenable SC. #47
