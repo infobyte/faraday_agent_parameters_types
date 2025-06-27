@@ -8,6 +8,7 @@ from faraday_agent_parameters_types.custom_types import (
     faraday_ip,
     faraday_float,
     faraday_url,
+    faraday_password,
 )
 
 DATA_TYPE = {
@@ -20,4 +21,5 @@ DATA_TYPE = {
     "ip": faraday_ip.FaradayIPSchema(),
     "float": faraday_float.FaradayFloatSchema(),
     "url": faraday_url.FaradayUrlSchema(),
+    "password": faraday_password.FaradayPasswordSchema(),
 }

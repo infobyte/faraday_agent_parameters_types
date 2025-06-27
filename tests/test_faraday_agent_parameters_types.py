@@ -18,6 +18,7 @@ from faraday_agent_parameters_types.custom_types import (
     faraday_float,
     faraday_url,
     faraday_domains_list,
+    faraday_password,
 )
 
 from ipaddress import IPv4Address, IPv6Address
@@ -37,6 +38,7 @@ indentify_dict = [
     },
     {"obj": {"type": "ip"}, "class": faraday_ip.FaradayIPSchema()},
     {"obj": {"type": "float"}, "class": faraday_float.FaradayFloatSchema()},
+    {"obj": {"type": "password"}, "class": faraday_password.FaradayPasswordSchema()},
 ]
 
 field_dict = [
@@ -287,6 +289,28 @@ field_dict = [
             "192.168.0.1",
             "test://www.google.com",
         ],
+    },
+    # PASSWORD
+    {
+        "obj": {"type": "password"},
+        "class": faraday_password.FaradayPasswordSchema(),
+        "valid": {
+            "deser": {
+                "fields": [
+                    {"data": "test_password", "value": "test_password"},
+                    {"data": "another_test_password", "value": "another_test_password"},
+                    {"data": "a" * 64, "value": "a" * 64},  # Max length is 64
+                ],
+            },
+            "ser": {
+                "fields": [
+                    {"data": "test_password", "value": "test_password"},
+                    {"data": "another_test_password", "value": "another_test_password"},
+                    {"data": "a" * 64, "value": "a" * 64},  # Max length is 64
+                ],
+            },
+        },
+        "invalid": [{"data": 12345}, {"data": ["test", "password"]}, "a" * 65],
     },
 ]
 
