@@ -299,18 +299,18 @@ field_dict = [
                 "fields": [
                     {"data": "test_password", "value": "test_password"},
                     {"data": "another_test_password", "value": "another_test_password"},
-                    {"data": "a" * 64, "value": "a" * 64},  # Max length is 64
+                    {"data": "a" * 256, "value": "a" * 256},  # Max length is 256
                 ],
             },
             "ser": {
                 "fields": [
                     {"data": "test_password", "value": "test_password"},
                     {"data": "another_test_password", "value": "another_test_password"},
-                    {"data": "a" * 64, "value": "a" * 64},  # Max length is 64
+                    {"data": "a" * 256, "value": "a" * 256},  # Max length is 256
                 ],
             },
         },
-        "invalid": [{"data": 12345}, {"data": ["test", "password"]}, "a" * 65],
+        "invalid": [{"data": 12345}, {"data": ["test", "password"]}, "a" * 257],
     },
 ]
 

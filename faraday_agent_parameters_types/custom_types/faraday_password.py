@@ -16,5 +16,5 @@ class FaradayPasswordSchema(TypeSchema):
 
     @validates("data")
     def validate_data(self, text):
-        if len(text) > 64:
-            raise ValidationError("Max length 64")
+        if len(text) > 256:
+            raise ValidationError("Max length 256")
