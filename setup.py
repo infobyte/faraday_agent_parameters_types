@@ -14,7 +14,7 @@ with open("README.md") as readme_file:
 with open("CHANGELOG.md") as history_file:
     history = history_file.read()
 
-requirements = ["marshmallow<4.0.0", "packaging", "validators>=0.34.0"]
+requirements = ["marshmallow<4.0.0", "packaging", "validators<=0.20.0"]
 
 setup_requirements = [
     "pytest-runner",
