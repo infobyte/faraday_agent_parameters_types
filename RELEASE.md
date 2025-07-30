@@ -1,3 +1,7 @@
+1.8.1 [Jul 16th, 2025]:
+---
+ * [MOD] Downgrade `validators` package version to `0.20.0` to avoid nix issues in Faraday. #52
+
 1.8.0 [May 14th, 2025]:
 ---
  * [ADD] Added a new domain list data type. #49
@@ -91,4 +95,3 @@
 ---
  * Encode/Decode the types, plus identifier logic
  * First release of the package, in alpha status
-
