@@ -17,6 +17,8 @@ from faraday_agent_parameters_types.custom_types import (
     faraday_ip,
     faraday_float,
     faraday_url,
+    faraday_domains_list,
+    faraday_password,
 )
 
 from ipaddress import IPv4Address, IPv6Address
@@ -30,8 +32,13 @@ indentify_dict = [
         "obj": {"type": "list", "composed": ["integer", "string"]},
         "class": faraday_list.FaradayListSchema(),
     },
+    {
+        "obj": {"type": "domains"},
+        "class": faraday_domains_list.FaradayDomainsListSchema(),
+    },
     {"obj": {"type": "ip"}, "class": faraday_ip.FaradayIPSchema()},
     {"obj": {"type": "float"}, "class": faraday_float.FaradayFloatSchema()},
+    {"obj": {"type": "password"}, "class": faraday_password.FaradayPasswordSchema()},
 ]
 
 field_dict = [
@@ -128,6 +135,38 @@ field_dict = [
             {"data": {"test": "test"}},
             1,
             {"test": "test"},
+        ],
+    },
+    # DOMAINS LIST
+    {
+        "obj": {"type": "list", "composed": (str,)},
+        "class": faraday_domains_list.FaradayDomainsListSchema(),
+        "valid": {
+            "deser": {
+                "fields": [
+                    {
+                        "data": ["domain.com", "testdata.com"],
+                        "value": ["domain.com", "testdata.com"],
+                    }
+                ],
+            },
+            "ser": {
+                "fields": [
+                    {
+                        "data": ["domain.com", "testdata.com"],
+                        "value": ["domain.com", "testdata.com"],
+                    }
+                ],
+            },
+        },
+        "invalid": [
+            "test",
+            {"data": 1},
+            {"data": "test"},
+            {"data": {"test": "test"}},
+            1,
+            {"test": "test"},
+            ["www.google.com", "https://thisisaweb.com", "test_data.com"],
         ],
     },
     # RANGE
@@ -250,6 +289,28 @@ field_dict = [
             "192.168.0.1",
             "test://www.google.com",
         ],
+    },
+    # PASSWORD
+    {
+        "obj": {"type": "password"},
+        "class": faraday_password.FaradayPasswordSchema(),
+        "valid": {
+            "deser": {
+                "fields": [
+                    {"data": "test_password", "value": "test_password"},
+                    {"data": "another_test_password", "value": "another_test_password"},
+                    {"data": "a" * 256, "value": "a" * 256},  # Max length is 256
+                ],
+            },
+            "ser": {
+                "fields": [
+                    {"data": "test_password", "value": "test_password"},
+                    {"data": "another_test_password", "value": "another_test_password"},
+                    {"data": "a" * 256, "value": "a" * 256},  # Max length is 256
+                ],
+            },
+        },
+        "invalid": [{"data": 12345}, {"data": ["test", "password"]}, "a" * 257],
     },
 ]
 

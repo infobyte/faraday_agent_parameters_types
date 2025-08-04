@@ -1,6 +1,6 @@
 {
     "arguments": {
-        "TOKEN": {"mandatory": true, "type": "string", "base": "string"},
+        "TOKEN": {"mandatory": true, "type": "password", "base": "string"},
         "COMPONENT_KEY": {"mandatory": false, "type": "string", "base": "string"},
         "GET_HOTSPOT": {"mandatory": false, "type": "boolean", "base": "boolean"}
     },
@@ -10,7 +10,7 @@
     "check_cmds": [
     ],
     "cmd": "{EXECUTOR_FILE_PATH}",
-    "category": "Source Code Analisys",
+    "category": "Source Code Analysis",
     "name": "sonarqube",
     "title": "SonarQube",
     "website": "https://www.sonarqube.org/",

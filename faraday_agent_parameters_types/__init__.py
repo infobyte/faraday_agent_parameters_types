@@ -2,7 +2,7 @@
 
 __author__ = """Faraday Development Team"""
 __email__ = "devel@infobytesec.com"
-__version__ = "1.7.0"
+__version__ = "1.8.1"
 
 from pathlib import Path
 from typing import Union
