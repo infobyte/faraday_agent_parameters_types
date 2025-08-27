@@ -1,3 +1,7 @@
+1.9.0 [Aug 27th, 2025]:
+---
+ * [ADD] Added a new password type. #51
+
 1.8.1 [Jul 16th, 2025]:
 ---
  * [MOD] Downgrade `validators` package version to `0.20.0` to avoid nix issues in Faraday. #52
