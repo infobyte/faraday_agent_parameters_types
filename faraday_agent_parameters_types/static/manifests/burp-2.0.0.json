@@ -2,7 +2,7 @@
     "arguments": {
         "API_HOST": {"mandatory": true, "type": "string", "base": "string"},
         "API_KEY": {"mandatory": true, "type": "password", "base": "string"},
-        "TARGET_URL": {"mandatory": true, "type": "url", "base": "string"},
+        "TARGET_URL": {"mandatory": true, "type": "list", "base": "list"},
         "NAMED_CONFIGURATION": {"mandatory": false, "type": "string", "base": "string"}
     },
     "environment_variables": [
