@@ -1,3 +1,7 @@
+1.9.1 [October 3rd, 2025]:
+---
+ * [MOD] Changed burp TARGET_URL to list type. #41
+
 1.9.0 [Aug 27th, 2025]:
 ---
  * [ADD] Added a new password type. #51
