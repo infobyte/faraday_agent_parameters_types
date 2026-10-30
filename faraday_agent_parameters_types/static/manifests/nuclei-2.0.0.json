@@ -6,6 +6,9 @@
     "environment_variables": [
         "NUCLEI_TEMPLATES"
     ],
+    "environment_variables_metadata": [
+        {"name": "NUCLEI_TEMPLATES", "sensitive": false}
+    ],
     "check_cmds": [
         "nuclei --version"
     ],

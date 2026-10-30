@@ -10,6 +10,11 @@
         "NESSUS_PASSWORD",
         "NESSUS_URL"
     ],
+    "environment_variables_metadata": [
+        {"name": "NESSUS_USERNAME", "sensitive": true},
+        {"name": "NESSUS_PASSWORD", "sensitive": true},
+        {"name": "NESSUS_URL", "sensitive": true}
+    ],
     "check_cmds": [
 
     ],

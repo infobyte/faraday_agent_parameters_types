@@ -5,6 +5,9 @@
     "environment_variables": [
         "ZAP_API_KEY"
     ],
+    "environment_variables_metadata": [
+        {"name": "ZAP_API_KEY", "sensitive": true}
+    ],
     "check_cmds": [
 
     ],

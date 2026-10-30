@@ -7,6 +7,9 @@
     "environment_variables": [
       "SONAR_URL"
     ],
+    "environment_variables_metadata": [
+        {"name": "SONAR_URL", "sensitive": true}
+    ],
     "check_cmds": [
     ],
     "cmd": "{EXECUTOR_FILE_PATH}",

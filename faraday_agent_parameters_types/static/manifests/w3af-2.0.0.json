@@ -5,6 +5,9 @@
     "environment_variables": [
         "W3AF_PATH"
     ],
+    "environment_variables_metadata": [
+        {"name": "W3AF_PATH", "sensitive": false}
+    ],
     "check_cmds": [
         "python2 --version"
     ],

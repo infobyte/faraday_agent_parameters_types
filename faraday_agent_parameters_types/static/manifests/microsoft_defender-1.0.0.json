@@ -7,6 +7,11 @@
         "CLIENT_ID",
         "CLIENT_SECRET"
     ],
+    "environment_variables_metadata": [
+        {"name": "TENANT_ID", "sensitive": true},
+        {"name": "CLIENT_ID", "sensitive": true},
+        {"name": "CLIENT_SECRET", "sensitive": true}
+    ],
     "check_cmds": [],
     "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Network and Vulnerability Scanners",
