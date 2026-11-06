@@ -13,6 +13,11 @@
         "TENABLE_SECRET_KEY",
         "TENABLE_PULL_INTERVAL"
     ],
+    "environment_variables_metadata": [
+        {"name": "TENABLE_ACCESS_KEY", "sensitive": true},
+        {"name": "TENABLE_SECRET_KEY", "sensitive": true},
+        {"name": "TENABLE_PULL_INTERVAL", "sensitive": false}
+    ],
     "check_cmds": [
 
     ],

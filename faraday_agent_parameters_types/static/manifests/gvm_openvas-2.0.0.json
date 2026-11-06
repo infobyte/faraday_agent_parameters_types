@@ -18,6 +18,12 @@
         "HOST",
         "PORT"
     ],
+    "environment_variables_metadata": [
+        {"name": "GVM_USER", "sensitive": true},
+        {"name": "GVM_PASSW", "sensitive": true},
+        {"name": "HOST", "sensitive": false},
+        {"name": "PORT", "sensitive": false}
+    ],
     "check_cmds": [
         "python3 -m pip show python-gvm"
     ],

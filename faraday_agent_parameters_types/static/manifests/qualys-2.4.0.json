@@ -8,6 +8,10 @@
         "QUALYS_USERNAME",
         "QUALYS_PASSWORD"
     ],
+    "environment_variables_metadata": [
+        {"name": "QUALYS_USERNAME", "sensitive": true},
+        {"name": "QUALYS_PASSWORD", "sensitive": true}
+    ],
     "check_cmds": [
     ],
     "cmd": "{EXECUTOR_FILE_PATH}",

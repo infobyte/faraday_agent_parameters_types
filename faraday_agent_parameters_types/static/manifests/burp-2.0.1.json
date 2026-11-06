@@ -8,6 +8,11 @@
         "BURP_API_KEY",
         "BURP_API_PULL_INTERVAL"
     ],
+    "environment_variables_metadata": [
+        {"name": "BURP_HOST", "sensitive": false},
+        {"name": "BURP_API_KEY", "sensitive": true},
+        {"name": "BURP_API_PULL_INTERVAL", "sensitive": false}
+    ],
     "check_cmds": [
     ],
     "cmd": "{EXECUTOR_FILE_PATH}",
