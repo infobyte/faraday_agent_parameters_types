@@ -1,3 +1,7 @@
+1.10.0 [Nov 25th, 2026]:
+---
+ * [ADD] Added environment_variables_metadata to the manifests to declare which environment variables are not sensitive. #55
+
 1.9.1 [October 3rd, 2025]:
 ---
  * [MOD] Changed burp TARGET_URL to list type. #41
