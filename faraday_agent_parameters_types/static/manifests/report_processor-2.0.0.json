@@ -6,6 +6,9 @@
     "environment_variables": [
         "REPORTS_PATH"
     ],
+    "environment_variables_metadata": [
+        {"name": "REPORTS_PATH", "sensitive": false}
+    ],
     "check_cmds": [
 
     ],

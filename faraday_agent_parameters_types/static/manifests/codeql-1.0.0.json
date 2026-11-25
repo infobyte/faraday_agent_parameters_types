@@ -6,6 +6,10 @@
         "GITHUB_TOKEN",
         "GITHUB_OWNER"
     ],
+    "environment_variables_metadata": [
+        {"name": "GITHUB_TOKEN", "sensitive": true},
+        {"name": "GITHUB_OWNER", "sensitive": false}
+    ],
     "check_cmds": [],
     "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Source Code Analysis",

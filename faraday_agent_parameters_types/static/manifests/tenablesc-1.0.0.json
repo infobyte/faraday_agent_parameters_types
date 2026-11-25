@@ -8,6 +8,11 @@
         "TENABLE_ACCESS_KEY",
         "TENABLE_SECRET_KEY"
     ],
+    "environment_variables_metadata": [
+        {"name": "TENABLE_HOST", "sensitive": false},
+        {"name": "TENABLE_ACCESS_KEY", "sensitive": true},
+        {"name": "TENABLE_SECRET_KEY", "sensitive": true}
+    ],
     "check_cmds": [
     ],
     "cmd": "{EXECUTOR_FILE_PATH}",

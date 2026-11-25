@@ -10,6 +10,11 @@
         "HCL_KEY_SECRET",
         "HCL_APP_ID"
     ],
+    "environment_variables_metadata": [
+        {"name": "HCL_KEY_ID", "sensitive": true},
+        {"name": "HCL_KEY_SECRET", "sensitive": true},
+        {"name": "HCL_APP_ID", "sensitive": true}
+    ],
     "check_cmds": [
 
     ],

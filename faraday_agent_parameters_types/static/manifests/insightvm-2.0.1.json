@@ -8,6 +8,11 @@
         "INSIGHTVM_USR",
         "INSIGHTVM_PASSWD"
     ],
+    "environment_variables_metadata": [
+        {"name": "INSIGHTVM_HOST", "sensitive": false},
+        {"name": "INSIGHTVM_USR", "sensitive": true},
+        {"name": "INSIGHTVM_PASSWD", "sensitive": true}
+    ],
     "check_cmds": [
     ],
     "cmd": "{EXECUTOR_FILE_PATH}",

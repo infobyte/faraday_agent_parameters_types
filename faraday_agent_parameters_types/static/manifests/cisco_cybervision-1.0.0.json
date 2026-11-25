@@ -9,6 +9,10 @@
         "CYBERVISION_TOKEN",
         "CYBERVISION_HTTPS_URL"
     ],
+    "environment_variables_metadata": [
+        {"name": "CYBERVISION_TOKEN", "sensitive": true},
+        {"name": "CYBERVISION_HTTPS_URL", "sensitive": true}
+    ],
     "check_cmds": [],
     "cmd": "{EXECUTOR_FILE_PATH}",
     "category": "Network and Vulnerability Scanners",
